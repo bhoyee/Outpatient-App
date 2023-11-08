@@ -1,0 +1,10 @@
+﻿@model Outpatient_App.Models.Appointment
+
+<h2>Book Appointment</h2>
+
+<form asp-action="BookAppointment" method="post">
+    <!-- Add form fields for patient details and appointment time -->
+    <input asp-for="PatientID" type="hidden" />
+    <input asp-for="ScheduledTime" type="hidden" />
+    <button type="submit">Book Appointment</button>
+</form>
