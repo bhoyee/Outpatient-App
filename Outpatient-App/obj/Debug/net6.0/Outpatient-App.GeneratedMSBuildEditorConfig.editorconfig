@@ -16,20 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Bhoyee-pc\Downloads\_Projects\_c#\_asp.net-core\Outpatient-App\Outpatient-App
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/BookAppointmen.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0FwcG9pbnRtZW4uY3NodG1s
+[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Appointment/BookAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQm9va0FwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/CheckIn.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tJbi5jc2h0bWw=
+[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Appointment/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ2hlY2tJbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Confirmation.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uZmlybWF0aW9uLmNzaHRtbA==
+[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Appointment/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Home/LanguageSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMYW5ndWFnZVNlbGVjdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Home/Privacy.cshtml]

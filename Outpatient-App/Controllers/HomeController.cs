@@ -28,5 +28,10 @@ namespace Outpatient_App.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult LanguageSelection()
+        {
+            return View();
+        }
     }
 }

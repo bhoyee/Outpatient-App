@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Language Selection";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="kiosk-container">
+    <h1 class="display-4">Please select a language</h1>
+    
+    <div class="language-button mb-3">
+        <button class="btn language-btn" onclick="selectLanguage('English')">
+            <img src="~/img/britain.png" alt="English Flag" class="language-icon" />
+            English
+        </button>
+    </div>
+
+    <div class="language-button mb-3">
+        <button class="btn language-btn" onclick="selectLanguage('French')">
+            <img src="~/img/french.png" alt="French Flag" class="language-icon" />
+            French
+        </button>
+    </div>
+
+    <div class="language-button mb-3">
+        <button class="btn language-btn" onclick="selectLanguage('Spanish')">
+            <img src="~/img/spain.png" alt="Spanish Flag" class="language-icon" />
+            Spanish
+        </button>
+    </div>
+
+</div>
+
+

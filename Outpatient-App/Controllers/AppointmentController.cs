@@ -19,16 +19,43 @@ namespace Outpatient_App.Controllers
         }
 
         [HttpPost]
-        public IActionResult BookAppointment(Appointment appointment)
+        public IActionResult BookAppointment(string healthCardID, string surname, DateTime? dateOfBirth)
         {
-            if (ModelState.IsValid)
+            if (!string.IsNullOrEmpty(healthCardID))
             {
-                _context.Appointments.Add(appointment);
-                _context.SaveChanges();
-                return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
+                var patient = _context.Patients.FirstOrDefault(p => p.HealthCardID == healthCardID);
+
+                if (patient != null)
+                {
+                    var appointment = new Appointment();
+                    appointment.PatientID = patient.PatientID;
+                    _context.Appointments.Add(appointment);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
+                }
             }
-            return View(appointment);
+            else if (!string.IsNullOrEmpty(surname) && dateOfBirth != null)
+            {
+                var patient = _context.Patients.FirstOrDefault(p =>
+                    p.Surname.StartsWith(surname) && p.DateOfBirth == dateOfBirth);
+
+                if (patient != null)
+                {
+                    var appointment = new Appointment();
+                    appointment.PatientID = patient.PatientID;
+                    _context.Appointments.Add(appointment);
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
+                }
+            }
+
+            ModelState.AddModelError("", "Patient not found. Please provide valid details.");
+            return View();
         }
+
+
+
+
 
         public IActionResult CheckIn()
         {

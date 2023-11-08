@@ -1,0 +1,25 @@
+﻿@model Outpatient_App.Models.Patient
+
+<h2>Book Appointment</h2>
+
+<div class="text-danger">
+    @Html.ValidationSummary()
+</div>
+
+<form asp-action="BookAppointment">
+    <div class="form-group">
+        <label for="HealthCardID">Health Card ID</label>
+        <input name="healthCardID" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Surname">First Letter of Surname</label>
+        <input name="surname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">Date of Birth</label>
+        <input name="dateOfBirth" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Book Appointment</button>
+</form>
+
+

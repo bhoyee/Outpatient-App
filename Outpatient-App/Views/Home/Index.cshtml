@@ -2,7 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*<link rel="stylesheet" href="~/css/site.css" />*@
+
+<div class="kiosk-container">
+    <h1 class="display-4">Welcome to our Outpatient Kiosk</h1>
+    <p>Press the button to start</p>
+    <button id="startButton" class="btn btn-success kiosk-button">Touch screen to start</button>
 </div>
+
+<script>
+    document.getElementById('startButton').addEventListener('click', function() {
+        // Redirect to the language selection page
+        window.location.href = '/Home/LanguageSelection'; // Adjust the URL as needed
+    });
+</script>

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\img\\britain.png",
+      "PackagePath": "staticwebassets\\img\\britain.png"
+    },
+    {
+      "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\img\\french.png",
+      "PackagePath": "staticwebassets\\img\\french.png"
+    },
+    {
+      "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\img\\spain.png",
+      "PackagePath": "staticwebassets\\img\\spain.png"
+    },
+    {
       "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
