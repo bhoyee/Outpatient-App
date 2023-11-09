@@ -33,5 +33,20 @@ namespace Outpatient_App.Controllers
         {
             return View();
         }
+
+
+        public IActionResult Disclaimer()
+        {
+            return View();
+        }
+
+        public IActionResult ContactReception()
+        {
+            return View();
+        }
+        public IActionResult Action()
+        {
+            return View();
+        }
     }
 }

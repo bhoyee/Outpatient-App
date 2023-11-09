@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Contact Reception";
+}
+
+<div class="kiosk-container">
+    <h1 class="display-4">Please Contact Reception</h1>
+    <p>Sorry, you cannot proceed further without contacting the receptionist.</p>
+    
+    <div class="thank-you">
+        <h1 class="display-4">Thank You</h1>
+        <p class="thank-you-message">Thank you for using our services. Have a great day!</p>
+        <button class="btn btn-primary btn-lg mt-4" onclick="goToHome()">Home</button>
+    </div>
+</div>
+
+<script>
+    setTimeout(function() {
+        window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
+    }, 10000);
+
+    function goToHome() {
+        window.location.href = "/Home"; // Redirect to the index screen manually
+    }
+</script>

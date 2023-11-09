@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Disclaimer";
+}
+
+<div class="kiosk-container">
+    <h1 class="display-4">Disclaimer</h1>
+    <p>Please read and accept the disclaimer.</p>
+    <button class="btn btn-success btn-lg btn-block" onclick="acceptDisclaimer()">Yes</button>
+    <button class="btn btn-danger btn-lg btn-block" onclick="rejectDisclaimer()">No</button>
+</div>
+
+
+
+<script>
+    function acceptDisclaimer() {
+        window.location.href = '/Home/Action'; // Redirect to the next screen
+    }
+
+    function rejectDisclaimer() {
+        window.location.href = '/Home/ContactReception'; // Redirect to the reception screen
+    }
+</script>

@@ -7,7 +7,7 @@
     <h1 class="display-4">Please select a language</h1>
     
     <div class="language-button mb-3">
-        <button class="btn language-btn" onclick="selectLanguage('English')">
+        <button id="englishButton" class="btn language-btn">
             <img src="~/img/britain.png" alt="English Flag" class="language-icon" />
             English
         </button>
@@ -29,4 +29,8 @@
 
 </div>
 
-
+<script>
+    document.getElementById('englishButton').addEventListener('click', function() {
+        window.location.href = '/Home/Disclaimer'; // Replace with your desired URL
+    });
+</script>

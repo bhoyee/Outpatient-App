@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Action";
+}
+
+<div class="kiosk-container text-center d-flex flex-column align-items-center">
+    <h1 class="display-4 mt-0 mb-4">Select an action</h1>
+    <div class="d-flex flex-column align-items-center mt-5">
+        <div class="mb-4">
+            <button class="btn btn-primary btn-lg" onclick="bookAppointment()">Book Appointment</button>
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-success btn-lg" onclick="checkIn()">Check In</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function bookAppointment() {
+        window.location.href = '/Appointment/BookAppointment';
+    }
+
+    function checkIn() {
+        window.location.href = '/Action/CheckIn';
+    }
+</script>

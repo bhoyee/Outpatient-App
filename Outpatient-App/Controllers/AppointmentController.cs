@@ -19,22 +19,9 @@ namespace Outpatient_App.Controllers
         }
 
         [HttpPost]
-        public IActionResult BookAppointment(string healthCardID, string surname, DateTime? dateOfBirth)
+        public IActionResult BookAppointment(string surname, DateTime? dateOfBirth)
         {
-            if (!string.IsNullOrEmpty(healthCardID))
-            {
-                var patient = _context.Patients.FirstOrDefault(p => p.HealthCardID == healthCardID);
-
-                if (patient != null)
-                {
-                    var appointment = new Appointment();
-                    appointment.PatientID = patient.PatientID;
-                    _context.Appointments.Add(appointment);
-                    _context.SaveChanges();
-                    return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
-                }
-            }
-            else if (!string.IsNullOrEmpty(surname) && dateOfBirth != null)
+            if (!string.IsNullOrEmpty(surname) && dateOfBirth != null)
             {
                 var patient = _context.Patients.FirstOrDefault(p =>
                     p.Surname.StartsWith(surname) && p.DateOfBirth == dateOfBirth);
