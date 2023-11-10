@@ -7,6 +7,7 @@
         public string Surname { get; set; }
         public string HealthCardID { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public string Postcode { get; set; }
     }
 
 }

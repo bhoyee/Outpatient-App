@@ -33,4 +33,12 @@
     document.getElementById('englishButton').addEventListener('click', function() {
         window.location.href = '/Home/Disclaimer'; // Replace with your desired URL
     });
+
+    setTimeout(function() {
+        window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
+    }, 10000);
+
+    function goToHome() {
+        window.location.href = "/Home"; // Redirect to the index screen manually
+    }
 </script>

@@ -12,6 +12,15 @@
 
 
 <script>
+
+
+    setTimeout(function() {
+        window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
+    }, 15000);
+
+    function goToHome() {
+        window.location.href = "/Home"; // Redirect to the index screen manually
+    }
     function acceptDisclaimer() {
         window.location.href = '/Home/Action'; // Redirect to the next screen
     }
@@ -19,4 +28,6 @@
     function rejectDisclaimer() {
         window.location.href = '/Home/ContactReception'; // Redirect to the reception screen
     }
+
+
 </script>

@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\img\\french.png"
     },
     {
+      "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\img\\preloading_image.gif",
+      "PackagePath": "staticwebassets\\img\\preloading_image.gif"
+    },
+    {
       "Id": "C:\\Users\\Bhoyee-pc\\Downloads\\_Projects\\_c#\\_asp.net-core\\Outpatient-App\\Outpatient-App\\wwwroot\\img\\spain.png",
       "PackagePath": "staticwebassets\\img\\spain.png"
     },

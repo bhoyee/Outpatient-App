@@ -7,6 +7,7 @@
 <div class="kiosk-container">
     <h2>Book Appointment</h2>
 
+
     <div class="row">
         <div class="col-md-12">
             <p class="note-label">NOTE:</p>
@@ -25,7 +26,7 @@
     </style>
 
     <!-- Step 1: Month Selection -->
-    <div class="month-selection">
+    <div class="month-selection step step-1">
         <h2>Select the Month You Were Born</h2>
         <div class="btn-group d-flex flex-wrap">
             @for (int month = 1; month <= 12; month++)
@@ -39,14 +40,14 @@
     </div>
 
     <!-- Step 2: Day Selection -->
-    <div class="day-selection" style="display: none;">
+    <div class="day-selection" style="display: none; step step-2">
         <h2>Select the Day You Were Born</h2>
         <div class="btn-group d-flex flex-wrap" id="daysContainer">
         </div>
     </div>
 
     <!-- Step 3: Year of Birth Input -->
-    <div class="year-input" style="display: none;">
+    <div class="year-input" style="display: none; step step-3">
         <h2>Enter the Year You Were Born</h2>
         <input type="text" id="yearInput" class="form-control mb-3" readonly maxlength="4" />
         <div class="btn-group d-flex flex-wrap">
@@ -63,7 +64,7 @@
     </div>
 
     <!-- Step 4: First Letter of Surname Selection -->
-    <div class="surname-selection" style="display: none;">
+    <div class="surname-selection" style="display: none; step step-4">
         <h2>Select the First Letter of Your Surname</h2>
         <div class="btn-group d-flex flex-wrap">
             @for (char letter = 'A'; letter <= 'Z'; letter++)
@@ -77,152 +78,86 @@
 
 
     <!-- Step 5: Postcode Entry -->
-<!-- Step 5: Postcode Entry -->
-<div class="postcode-entry" style="display: none;">
-    <h2>Enter Your Postcode</h2>
-    <input type="text" id="postcodeInput" class="form-control mb-3" maxlength="6" />
-    <div class="btn-group d-flex flex-wrap">
+
+    <div class="postcode-entry" style="display: none; step step-5">
+        <h2>Enter Your Postcode</h2>
+
+        <input type="text" id="postcodeInput" name="postcode" class="form-control mb-3" maxlength="6" />
+
         <div class="btn-group d-flex flex-wrap">
-            @for (char letter = 'A'; letter <= 'Z'; letter++)
-            {
-                <button class="btn btn-info letter-button m-2" onclick="enterLetter('@letter')">@letter</button>
-            }
-        </div>
-        <div class="btn-group d-flex flex-wrap">
-            @for (char digit = '0'; digit <= '9'; digit++)
-            {
-                <button class="btn btn-info digit-button m-2" onclick="enterDigit('@digit')">@digit</button>
-            }
-            <button class="btn btn-danger m-2" onclick="clearPostcodeInput()">Clear</button>
+            <div class="btn-group d-flex flex-wrap">
+                @for (char letter = 'A'; letter <= 'Z'; letter++)
+                {
+                    <button class="btn btn-info letter-button m-2" onclick="enterLetter('@letter')">@letter</button>
+                }
+            </div>
+            <div class="btn-group d-flex flex-wrap">
+                @for (char digit = '0'; digit <= '9'; digit++)
+                {
+                    <button class="btn btn-info digit-button m-2" onclick="enterDigit('@digit')">@digit</button>
+                }
+                <button class="btn btn-danger m-2" onclick="clearPostcodeInput()">Clear</button>
+            </div>
         </div>
     </div>
-</div>
 
 
+    <!-- Step 6: Appointment Summary -->
+    <div class="appointment-summary" style="display: none; step step-6">
+        <h2>Appointment Summary</h2>
+        <p>Date of Birth: <span id="summaryDateOfBirth"></span></p>
+        <p>First Letter of Surname: <span id="summarySurname"></span></p>
+        <p>Postcode: <span id="summaryPostcode"></span></p>
+       @* <button class="btn btn-secondary" onclick="goBack()">Back</button>*@
+        <button class="btn btn-primary mt-5  btn-lg" onclick="bookNow()">Book Now</button>
+
+        <!-- Pre-loading animation -->
+        <div id="loading" class="text-center" style="display:none;">
+            <img src="~/img/preloading_image.gif" alt="Loading..." />
+            <p>Loading...</p>
+        </div>
+
+    </div>
+
+
+
+
+    
     <!-- Back Button -->
-    <button class="btn btn-secondary mb-3 back-button" style="display: none;" onclick="goBack()">Back</button>
+    <button class="btn btn-secondary mb-3 mt-5 back-button  btn-lg" style="display: none;" onclick="goBack()">Back</button>
+
+
+    <!-- Step 7: Appointment Result - Success -->
+    <div class="appointment-success" style="display: none;">
+        <h2>Appointment Booked Successfully</h2>
+        <p>Your appointment has been booked successfully.</p>
+
+          <button class="btn btn-primary mt-5  btn-lg" onclick="goHome()">Home</button>
+    </div>
+
+    <!-- Step 8: Appointment Result - Failure -->
+    <div class="appointment-failure" style="display: none;">
+        <h2>Failed to Book Appointment</h2>
+        <p>Sorry, we were unable to book your appointment at this time. Please try again later.</p>
+
+          <button class="btn btn-primary mt-5  btn-lg" onclick="goHome()">Home</button>
+    </div>
+
+    <!-- Step 9: Duplicate Appointment -->
+    <div class="appointment-duplicate" style="display: none;">
+        <h2>Duplicate Appointment</h2>
+        <p>Sorry, you already have an appointment booked for tommorrow.</p>
+            <h3 class="mb-5">Thank you !!!</h3>
+        <button class="btn btn-primary mt-5  btn-lg" onclick="goHome()">Home</button>
+    </div>
+
+
 
     <!-- Final Submit Button -->
     <button type="submit" class="btn btn-primary" id="finalSubmitButton" style="display: none;">Book Appointment</button>
-
-    <script>
-        var selectedMonth = null;
-        var selectedDay = null;
-        var enteredYear = "";
-
-        function selectMonth(month, daysInMonth) {
-            selectedMonth = month;
-            $('.month-button').removeClass('selected');
-            $(event.target).addClass('selected');
-
-            // Move to the next step (Day Selection)
-            $('.month-selection').hide();
-            $('.day-selection').show();
-            $('.back-button').show();
-
-            // Populate days for the selected month
-            var daysContainer = $('#daysContainer');
-            daysContainer.empty();
-            for (var day = 1; day <= daysInMonth; day++) {
-                daysContainer.append('<button id="dayButton' + day + '" class="btn btn-info day-button m-2" onclick="selectDay(' + day + ')" onmouseover="hoverDay(' + day + ')" onmouseout="unhoverDay(' + day + ')">' + day + '</button>');
-            }
-        }
-
-        function selectDay(day) {
-            selectedDay = day;
-            $('.day-button').removeClass('selected');
-            $(event.target).addClass('selected');
-
-            // Move to the next step (Year of Birth Input)
-            $('.day-selection').hide();
-            $('.year-input').show();
-            $('.back-button').show();
-        }
-
-        function hoverDay(day) {
-            $('#dayButton' + day).addClass('hovered');
-        }
-
-        function unhoverDay(day) {
-            $('#dayButton' + day).removeClass('hovered');
-        }
-
  
-        function addToYear(number) {
-            if (document.getElementById("yearInput").value.length < 4) {
-                document.getElementById("yearInput").value += number;
-                console.log("Year Input:", document.getElementById("yearInput").value);
-                if (document.getElementById("yearInput").value.length == 4) {
-                    console.log("Year of birth entered, calling selectSurname");
-                    selectSurname(); // Call selectSurname without passing any arguments
-                }
-            }
-        }
+@*    <div id="errorMessage" class="text-danger"></div>
+*@
 
 
-        function clearYearInput() {
-            document.getElementById("yearInput").value = "";
-            enteredYear = "";
-        }
-
-
-        function selectSurname() {
-            console.log("Selecting surname...");
-
-            // Hide the current step (Year of Birth Input)
-            $('.year-input').hide();
-    
-            // Show the next step (Select the First Letter of Your Surname)
-            $('.surname-selection').show();
-        }
-
-        function selectSurnameLetter(letter) {
-            console.log("Selected letter:", letter);
-
-            // Display the selected letter in the text box
-            document.getElementById("surnameInput").value = letter;
-
-            // Move to the next step (Postcode Entry)
-            $('.surname-selection').hide();
-            $('.postcode-entry').show();
-        }
-
-
-function enterLetter(letter) {
-    var postcodeInput = document.getElementById("postcodeInput");
-    if (postcodeInput.value.length < 6) {
-        postcodeInput.value += letter;
-    }
-}
-
-function enterDigit(digit) {
-    var postcodeInput = document.getElementById("postcodeInput");
-    if (postcodeInput.value.length < 6) {
-        postcodeInput.value += digit;
-    }
-}
-
-function clearPostcodeInput() {
-    document.getElementById("postcodeInput").value = "";
-}
-
-
-        function goBack() {
-            // Go back to the previous step
-            if ($('.postcode-entry').is(':visible')) {
-                $('.postcode-entry').hide();
-                $('.surname-selection').show();
-            } else if ($('.surname-selection').is(':visible')) {
-                $('.surname-selection').hide();
-                $('.year-input').show();
-            } else if ($('.year-input').is(':visible')) {
-                $('.year-input').hide();
-                $('.day-selection').show();
-            } else if ($('.day-selection').is(':visible')) {
-                $('.day-selection').hide();
-                $('.month-selection').show();
-                $('.back-button').hide();
-            }
-        }
-    </script>
 </div>
