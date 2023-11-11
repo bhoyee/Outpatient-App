@@ -1,4 +1,4 @@
-﻿@{
+﻿@*@{
     ViewData["Title"] = "Contact Reception";
 }
 
@@ -15,6 +15,40 @@
 
 <script>
     setTimeout(function() {
+        window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
+    }, 10000);
+
+    function goToHome() {
+        window.location.href = "/Home"; // Redirect to the index screen manually
+    }
+</script>
+*@
+
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Views_Home_ContactReception> ContactReceptionLocalizer
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = ContactReceptionLocalizer["Contact Reception"];
+
+    // Get the selected language from the query parameter or use the default
+    var selectedLanguage = HttpContextAccessor.HttpContext.Request.Query["lang"].ToString();
+}
+
+<div class="kiosk-container">
+    <h1 class="display-4">@ContactReceptionLocalizer["Please Contact Reception"]</h1>
+    <p>@ContactReceptionLocalizer["Cannot Proceed Without Contacting Reception"]</p>
+
+    <div class="thank-you">
+        <h1 class="display-4">@ContactReceptionLocalizer["Thank You"]</h1>
+        <p class="thank-you-message">@ContactReceptionLocalizer["Thank You Message"]</p>
+        <button class="btn btn-primary btn-lg mt-4" onclick="goToHome()">@ContactReceptionLocalizer["Home Button"]</button>
+    </div>
+</div>
+
+<script>
+    var selectedLanguage = '@selectedLanguage'; // Declare the variable at the top
+
+    setTimeout(function () {
         window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
     }, 10000);
 

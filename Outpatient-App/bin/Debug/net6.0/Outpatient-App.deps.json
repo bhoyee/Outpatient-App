@@ -14,6 +14,17 @@
         },
         "runtime": {
           "Outpatient-App.dll": {}
+        },
+        "resources": {
+          "en/Outpatient-App.resources.dll": {
+            "locale": "en"
+          },
+          "es/Outpatient-App.resources.dll": {
+            "locale": "es"
+          },
+          "fr/Outpatient-App.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "Azure.Core/1.25.0": {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Outpatient_App.Models;
 using System.Globalization;
@@ -21,179 +22,204 @@ namespace Outpatient_App.Controllers
         }
 
         //[HttpPost]
-        //public IActionResult BookAppointment(string surname, DateTime? dateOfBirth)
+        //public IActionResult BookNow(string dateOfBirth, string surname, string postcode)
         //{
-        //    if (!string.IsNullOrEmpty(surname) && dateOfBirth != null)
+        //    try
         //    {
-        //        var patient = _context.Patients.FirstOrDefault(p =>
-        //            p.Surname.StartsWith(surname) && p.DateOfBirth == dateOfBirth);
+        //        Console.WriteLine($"Received request with dateOfBirth: {dateOfBirth}, surname: {surname}, postcode: {postcode}");
 
-        //        if (patient != null)
+        //        DateTime formattedDateOfBirth;
+
+        //        // Try parsing with multiple date formats
+        //        string[] formats = { "yyyy-MM-dd", "dd/MM/yyyy" };
+        //        if (!DateTime.TryParseExact(dateOfBirth.Trim(), formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out formattedDateOfBirth))
         //        {
-        //            var appointment = new Appointment();
-        //            appointment.PatientID = patient.PatientID;
-        //            _context.Appointments.Add(appointment);
-        //            _context.SaveChanges();
-        //            return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
+        //            Console.WriteLine($"Failed to parse dateOfBirth: {dateOfBirth}");
+        //            throw new FormatException("Invalid date format. Please enter a valid date in the 'dd/MM/yyyy' format.");
         //        }
-        //    }
 
-        //    ModelState.AddModelError("", "Patient not found. Please provide valid details.");
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult BookAppointment(string surname, DateTime? dateOfBirth, string postcode)
-        //{
-        //    if (!string.IsNullOrEmpty(surname) && dateOfBirth != null && !string.IsNullOrEmpty(postcode))
-        //    {
-        //        var patient = _context.Patients.FirstOrDefault(p =>
-        //            p.Surname.StartsWith(surname) && p.DateOfBirth == dateOfBirth && p.Postcode == postcode);
+        //        var trimmedSurname = surname.Trim();
+        //        var trimmedPostcode = postcode.Trim();
+        //        var formattedDateForQuery = formattedDateOfBirth.ToString("yyyy-MM-dd");
+        //        Console.WriteLine($"Formatted date for query: {formattedDateForQuery}");
+
+        //        var query = @"
+        //    SELECT TOP 1 *
+        //    FROM Patients
+        //    WHERE Surname LIKE @Surname
+        //      AND CAST(DateOfBirth AS DATE) = @DateOfBirth
+        //      AND Postcode = @Postcode
+        //";
+
+        //        var parameters = new SqlParameter[]
+        //        {
+        //    new SqlParameter("@Surname", $"{trimmedSurname}%"),
+        //    new SqlParameter("@DateOfBirth", formattedDateForQuery),
+        //    new SqlParameter("@Postcode", trimmedPostcode)
+        //        };
+
+        //        var patient = _context.Patients
+        //            .FromSqlRaw(query, parameters)
+        //            .FirstOrDefault();
 
         //        if (patient != null)
         //        {
+        //            // Perform additional operations, check for appointments, etc.
+
+        //            // Example: Creating an object and adding it to the database
         //            var appointment = new Appointment
         //            {
         //                PatientID = patient.PatientID,
-        //                ScheduledTime = DateTime.Now.AddDays(1) // Book appointment for the next day
+        //                ScheduledTime = DateTime.Now.Date.AddDays(1), // Set time to midnight
+        //                CheckedIn = false
+        //                // Add any other properties for the appointment here
         //            };
 
         //            _context.Appointments.Add(appointment);
         //            _context.SaveChanges();
 
-        //            return RedirectToAction(nameof(Confirmation), new { appointmentId = appointment.AppointmentID });
+        //            return Json(new { success = true, patientId = patient.PatientID, appointmentId = appointment.AppointmentID });
         //        }
         //        else
         //        {
-        //            return RedirectToAction(nameof(UserNotFound));
+        //            // Log the details for debugging
+        //            Console.WriteLine($"Patient not found. Details: Date of Birth - {formattedDateOfBirth}, Surname - {trimmedSurname}, Postcode - {trimmedPostcode}");
+
+        //            return Json(new { success = false, message = "Patient not found. Please provide valid details." });
         //        }
         //    }
-
-        //    ModelState.AddModelError("", "Invalid details provided.");
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult BookNow(string dateOfBirth, string surname, string postcode)
-        //{
-        //    // Hardcoded values for testing
-        //    var formattedDateOfBirth = "29/01/1988";
-        //    var trimmedSurname = "S";
-        //    var trimmedPostcode = "HU51PQ";
-
-        //    var patient = _context.Patients.FirstOrDefault(p =>
-        //        p.Surname.Equals(trimmedSurname, StringComparison.OrdinalIgnoreCase) &&
-        //        EF.Functions.Like(p.DateOfBirth.ToString(), formattedDateOfBirth) &&
-        //        p.Postcode.Equals(trimmedPostcode, StringComparison.OrdinalIgnoreCase));
-
-        //    if (patient != null)
+        //    catch (Exception ex)
         //    {
-        //        // Patient found, return JSON indicating success
-        //        return Json(new { success = true, patientId = patient.PatientID });
+        //        // Log the exception for debugging
+        //        Console.WriteLine($"Exception: {ex}");
+
+        //        if (ex is FormatException)
+        //        {
+        //            // Handle the format exception with a specific message
+        //            return Json(new { success = false, message = "Invalid date format. Please enter a valid date in the 'dd/MM/yyyy' format." });
+        //        }
+        //        else
+        //        {
+        //            // Handle other exceptions with a generic message
+        //            return Json(new { success = false, message = "An error occurred while processing your request. Please try again later." });
+        //        }
         //    }
-        //    else
-        //    {
-        //        // Patient not found, return JSON indicating failure
-        //        return Json(new { success = false, message = "Patient not found. Please provide valid details." });
-        ////    }
         //}
+
 
         [HttpPost]
         public IActionResult BookNow(string dateOfBirth, string surname, string postcode)
         {
-            var formattedDateOfBirth = dateOfBirth.Trim();
-            var trimmedSurname = surname.Trim();
-            var trimmedPostcode = postcode.Trim();
-
-            var query = $@"
-        SELECT TOP 1 *
-        FROM Patients
-        WHERE Surname LIKE '{trimmedSurname}%' 
-          AND CONVERT(DATE, DateOfBirth, 103) = '{formattedDateOfBirth}'
-          AND Postcode = '{trimmedPostcode}'
-    ";
-
-            var patient = _context.Patients.FromSqlRaw(query).FirstOrDefault();
-
-            if (patient != null)
+            try
             {
-                // Check if the patient already has an appointment on the specified date
+                Console.WriteLine($"Received request with dateOfBirth: {dateOfBirth}, surname: {surname}, postcode: {postcode}");
+
+                DateTime formattedDateOfBirth;
+
+                // Try parsing with multiple date formats
+                string[] formats = { "yyyy-MM-dd", "dd/MM/yyyy" };
+                if (!DateTime.TryParseExact(dateOfBirth.Trim(), formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out formattedDateOfBirth))
+                {
+                    Console.WriteLine($"Failed to parse dateOfBirth: {dateOfBirth}");
+                    throw new FormatException("Invalid date format. Please enter a valid date in the 'dd/MM/yyyy' format.");
+                }
+
+                var trimmedSurname = surname.Trim();
+                var trimmedPostcode = postcode.Trim();
+                var formattedDateForQuery = formattedDateOfBirth.ToString("yyyy-MM-dd");
+                Console.WriteLine($"Formatted date for query: {formattedDateForQuery}");
+
+                // Check if the patient has an appointment for the current day
                 var existingAppointment = _context.Appointments
-                    .FirstOrDefault(a => a.PatientID == patient.PatientID &&
-                                         a.ScheduledTime.Date == DateTime.Now.Date.AddDays(1));
+                    .Where(a => a.PatientID != null)  // Assuming PatientID is not nullable
+                    .Join(
+                        _context.Patients,
+                        app => app.PatientID,
+                        pat => pat.PatientID,
+                        (app, pat) => new { Appointment = app, Patient = pat }
+                    )
+                    .Where(joined => joined.Patient.Surname.StartsWith(trimmedSurname) &&
+                                     joined.Patient.DateOfBirth.Date == formattedDateOfBirth.Date.AddDays(1) &&
+                                     joined.Patient.Postcode == trimmedPostcode)
+                    .FirstOrDefault();
 
                 if (existingAppointment != null)
                 {
-                    // Patient already has an appointment on the specified date
-                    return Json(new { success = false, message = "Patient already has an appointment on the specified date." });
+                    // Duplicate appointment found
+                    Console.WriteLine($"Duplicate appointment found. Patient ID: {existingAppointment.Appointment.PatientID}");
+
+                    // You can add code here to handle the display of the duplicate appointment message
+                    return Json(new { success = false, message = "Duplicate appointment found. You already have an appointment booked for today." });
                 }
 
-                // Patient found, insert into Appointment table
-                var appointment = new Appointment
+                // If no duplicate appointment is found, proceed with booking
+                var query = @"
+            SELECT TOP 1 *
+            FROM Patients
+            WHERE Surname LIKE @Surname
+              AND CAST(DateOfBirth AS DATE) = @DateOfBirth
+              AND Postcode = @Postcode
+        ";
+
+                var parameters = new SqlParameter[]
                 {
-                    PatientID = patient.PatientID,
-                    ScheduledTime = DateTime.Now.Date.AddDays(1), // Set time to midnight
-                    CheckedIn = false
-                    // Add any other properties for the appointment here
+            new SqlParameter("@Surname", $"{trimmedSurname}%"),
+            new SqlParameter("@DateOfBirth", formattedDateForQuery),
+            new SqlParameter("@Postcode", trimmedPostcode)
                 };
 
-                _context.Appointments.Add(appointment);
-                _context.SaveChanges();
+                var patient = _context.Patients
+                    .FromSqlRaw(query, parameters)
+                    .FirstOrDefault();
 
-                // Return JSON indicating success
-                return Json(new { success = true, patientId = patient.PatientID, appointmentId = appointment.AppointmentID });
+                if (patient != null)
+                {
+                    // Perform additional operations, check for appointments, etc.
+
+                    // Example: Creating an object and adding it to the database
+                    var appointment = new Appointment
+                    {
+                        PatientID = patient.PatientID,
+                        ScheduledTime = DateTime.Now.Date.AddDays(1), // Set time to next day of current date
+                        CheckedIn = false
+                        // Add any other properties for the appointment here
+                    };
+
+                    _context.Appointments.Add(appointment);
+                    _context.SaveChanges();
+
+                    return Json(new { success = true, patientId = patient.PatientID, appointmentId = appointment.AppointmentID });
+                }
+                else
+                {
+                    // Log the details for debugging
+                    Console.WriteLine($"Patient not found. Details: Date of Birth - {formattedDateOfBirth}, Surname - {trimmedSurname}, Postcode - {trimmedPostcode}");
+
+                    return Json(new { success = false, message = "Patient not found. Please provide valid details." });
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Patient not found, return JSON indicating failure
-                return Json(new { success = false, message = "Patient not found. Please provide valid details." });
+                // Log the exception for debugging
+                Console.WriteLine($"Exception: {ex}");
+
+                if (ex is FormatException)
+                {
+                    // Handle the format exception with a specific message
+                    return Json(new { success = false, message = "Invalid date format. Please enter a valid date in the 'dd/MM/yyyy' format." });
+                }
+                else
+                {
+                    // Handle other exceptions with a generic message
+                    return Json(new { success = false, message = "An error occurred while processing your request. Please try again later." });
+                }
             }
         }
 
 
-        public IActionResult Confirmation(int appointmentId)
-        {
-            // Retrieve appointment details if needed
-            return View();
-        }
-
-        public IActionResult UserNotFound()
-        {
-            return View();
-        }
 
 
 
-
-
-        //public IActionResult CheckIn()
-        //{
-        //    // Display a form for checking in appointments
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public IActionResult CheckIn(Appointment appointment)
-        //{
-        //    var existingAppointment = _context.Appointments.FirstOrDefault(a => a.AppointmentID == appointment.AppointmentID);
-
-        //    if (existingAppointment != null)
-        //    {
-        //        existingAppointment.CheckedIn = true;
-        //        _context.SaveChanges();
-        //        return RedirectToAction(nameof(Confirmation), new { appointmentId = existingAppointment.AppointmentID });
-        //    }
-
-        //    return View(appointment);
-        //}
-
-        //public IActionResult Confirmation(int appointmentId)
-        //{
-        //    var appointment = _context.Appointments.FirstOrDefault(a => a.AppointmentID == appointmentId);
-        //    if (appointment != null)
-        //    {
-        //        return View(appointment);
-        //    }
-        //    return NotFound();
-        //}
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Outpatient_App.Models;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace Outpatient_App.Controllers
 {
@@ -35,10 +36,23 @@ namespace Outpatient_App.Controllers
         }
 
 
-        public IActionResult Disclaimer()
+        //public IActionResult Disclaimer()
+        //{
+        //    return View();
+        //}
+        [HttpGet]
+        public IActionResult Disclaimer(string lang)
         {
+            if (!string.IsNullOrEmpty(lang))
+            {
+                CultureInfo.CurrentCulture = new CultureInfo(lang);
+                CultureInfo.CurrentUICulture = new CultureInfo(lang);
+            }
+
             return View();
         }
+
+
 
         public IActionResult ContactReception()
         {

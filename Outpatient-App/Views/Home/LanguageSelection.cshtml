@@ -1,4 +1,6 @@
-﻿@{
+﻿@*@using Outpatient_App.Utilities
+
+@{
     ViewData["Title"] = "Language Selection";
 }
 
@@ -7,21 +9,21 @@
     <h1 class="display-4">Please select a language</h1>
     
     <div class="language-button mb-3">
-        <button id="englishButton" class="btn language-btn">
+        <button id="englishButton" class="btn language-btn" onclick="selectLanguage('en')">
             <img src="~/img/britain.png" alt="English Flag" class="language-icon" />
             English
         </button>
     </div>
 
     <div class="language-button mb-3">
-        <button class="btn language-btn" onclick="selectLanguage('French')">
+        <button class="btn language-btn" onclick="selectLanguage('fr')">
             <img src="~/img/french.png" alt="French Flag" class="language-icon" />
             French
         </button>
     </div>
 
     <div class="language-button mb-3">
-        <button class="btn language-btn" onclick="selectLanguage('Spanish')">
+        <button class="btn language-btn" onclick="selectLanguage('es')">
             <img src="~/img/spain.png" alt="Spanish Flag" class="language-icon" />
             Spanish
         </button>
@@ -30,15 +32,83 @@
 </div>
 
 <script>
-    document.getElementById('englishButton').addEventListener('click', function() {
-        window.location.href = '/Home/Disclaimer'; // Replace with your desired URL
-    });
+    function selectLanguage(language) {
+        // Save the selected language to a cookie
+        document.cookie = `selectedLanguage=${language};path=/`;
+
+        // Redirect to the Disclaimer page
+        window.location.href = '/Home/Disclaimer';
+    }
 
     setTimeout(function() {
-        window.location.href = "/Home/"; // Redirect to the index screen after 15 seconds
+        goToHome();
     }, 10000);
 
     function goToHome() {
         window.location.href = "/Home"; // Redirect to the index screen manually
+    }
+</script>*@
+
+@using Outpatient_App.Utilities
+@inject Microsoft.Extensions.Localization.IStringLocalizer<Views_Home_LanguageSelection> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Language Selection"];
+
+    // Define selectedLanguage here or retrieve it from the query parameter
+    var selectedLanguage = Context.Request.Query["lang"].ToString();
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="kiosk-container">
+    <h1 class="display-4">@Localizer["Please select a language"]</h1>
+
+    <div class="language-button mb-3">
+        <button id="@Languages.English.ToLower()Button" class="btn language-btn" onclick="selectLanguage('@Languages.English')">
+            <img src="~/img/britain.png" alt="English Flag" class="language-icon" />
+            @Localizer["English"]
+        </button>
+    </div>
+
+    <div class="language-button mb-3">
+        <button class="btn language-btn" onclick="selectLanguage('@Languages.French')">
+            <img src="~/img/french.png" alt="French Flag" class="language-icon" />
+            @Localizer["French"]
+        </button>
+    </div>
+
+    <div class="language-button mb-3">
+        <button class="btn language-btn" onclick="selectLanguage('@Languages.Spanish')">
+            <img src="~/img/spain.png" alt="Spanish Flag" class="language-icon" />
+            @Localizer["Spanish"]
+        </button>
+    </div>
+</div>
+
+<script>
+    // Move the declaration to the top to make it accessible globally
+    var selectedLanguage = '@selectedLanguage';
+
+    function selectLanguage(language) {
+        selectedLanguage = language.toLowerCase();
+        console.log("Selected Language: " + selectedLanguage);
+        window.location.href = '/Home/Disclaimer?lang=' + selectedLanguage;
+    }
+
+    setTimeout(function() {
+        goToHome();
+    }, 10000);
+
+    function goToHome() {
+        window.location.href = "/Home"; // Redirect to the index screen manually
+    }
+
+    function acceptDisclaimer() {
+        window.location.href = '/Home/Disclaimer?lang=' + selectedLanguage;
+    }
+
+    function rejectDisclaimer() {
+        window.location.href = '/Home/Disclaimer?lang=' + selectedLanguage;
     }
 </script>

@@ -8,10 +8,10 @@
     <h2>Book Appointment</h2>
 
 
-    <div class="row">
+   <div class="row important-info-container">
         <div class="col-md-12">
             <p class="note-label">NOTE:</p>
-            <p class="important-info">This appointment booking is for the next day, which is @(DateTime.Now.AddDays(1).ToString("dddd, MMMM d, yyyy")).</p>
+            <p class="important-info">You are checking in for today, which is @(DateTime.Now.ToString("dddd, MMMM d, yyyy")).</p>
         </div>
     </div>
 
@@ -132,13 +132,17 @@
         <h2>Appointment Booked Successfully</h2>
         <p>Your appointment has been booked successfully.</p>
 
+        <h5 class="mb-5 text-success">Your appointment date is @(DateTime.Now.AddDays(1).ToString("dddd, MMMM d, yyyy")).</h5>
+
           <button class="btn btn-primary mt-5  btn-lg" onclick="goHome()">Home</button>
     </div>
 
     <!-- Step 8: Appointment Result - Failure -->
     <div class="appointment-failure" style="display: none;">
         <h2>Failed to Book Appointment</h2>
-        <p>Sorry, we were unable to book your appointment at this time. Please try again later.</p>
+        <p>Sorry, we were unable to find your details on our system.</p>
+        <p>Please speak with the receptionist.</p>
+        <h3 class="mb-5">Thank you !!!</h3>
 
           <button class="btn btn-primary mt-5  btn-lg" onclick="goHome()">Home</button>
     </div>
@@ -156,7 +160,7 @@
     <!-- Final Submit Button -->
     <button type="submit" class="btn btn-primary" id="finalSubmitButton" style="display: none;">Book Appointment</button>
  
-@*    <div id="errorMessage" class="text-danger"></div>
+@*  <div id="errorMessage" class="text-danger"></div>
 *@
 
 
@@ -169,8 +173,73 @@
 
 // Write your JavaScript code.
 
+           var selectedMonth = null;
+        var selectedDay = null;
+        var enteredYear = "";
+        function selectMonth(month, daysInMonth) {
+            selectedMonth = month;
+            $('.month-button').removeClass('selected');
+            $(event.target).addClass('selected');
+            // Move to the next step (Day Selection)
+            $('.month-selection').hide();
+            $('.day-selection').show();
+            $('.back-button').show();
+            // Populate days for the selected month
+            var daysContainer = $('#daysContainer');
+            daysContainer.empty();
+            for (var day = 1; day <= daysInMonth; day++) {
+                daysContainer.append('<button id="dayButton' + day + '" class="btn btn-info day-button m-2" onclick="selectDay(' + day + ')" onmouseover="hoverDay(' + day + ')" onmouseout="unhoverDay(' + day + ')">' + day + '</button>');
+            }
+        }
+
+        function selectDay(day) {
+            selectedDay = day;
+            $('.day-button').removeClass('selected');
+            $(event.target).addClass('selected');
+
+            // Move to the next step (Year of Birth Input)
+            $('.day-selection').hide();
+            $('.year-input').show();
+            $('.back-button').show();
+        }
+
+        function hoverDay(day) {
+            $('#dayButton' + day).addClass('hovered');
+        }
+
+        function unhoverDay(day) {
+            $('#dayButton' + day).removeClass('hovered');
+        }
+
+ 
+    function addToYear(number) {
+        if (document.getElementById("yearInput").value.length < 4) {
+            document.getElementById("yearInput").value += number;
+            enteredYear = document.getElementById("yearInput").value; // Update enteredYear
+            console.log("Year Input:", enteredYear);
+            if (enteredYear.length == 4) {
+                console.log("Year of birth entered, calling selectSurname");
+                selectSurname(); // Call selectSurname without passing any arguments
+            }
+        }
+    }
 
 
+        function clearYearInput() {
+            document.getElementById("yearInput").value = "";
+            enteredYear = "";
+        }
+
+
+        function selectSurname() {
+            console.log("Selecting surname...");
+
+            // Hide the current step (Year of Birth Input)
+            $('.year-input').hide();
+    
+            // Show the next step (Select the First Letter of Your Surname)
+            $('.surname-selection').show();
+        }
 
 function selectSurnameLetter(letter) {
     console.log("Selected letter:", letter);
@@ -262,64 +331,72 @@ function bookNow() {
     // Show the pre-loading animation
     $('#loading').show();
 
-    var dateOfBirth = selectedMonth + "/" + selectedDay + "/" + enteredYear;
+    // Construct the dateOfBirth string in the 'dd/MM/yyyy' format
+    var formattedDay = (selectedDay < 10 ? '0' : '') + selectedDay;
+    var formattedMonth = (selectedMonth < 10 ? '0' : '') + selectedMonth;
+    var dateOfBirth = formattedDay + '/' + formattedMonth + '/' + enteredYear;
+
+    console.log("Date of Birth (before sending to server):", dateOfBirth);
+
     var surname = document.getElementById("surnameInput").value;
     var postcode = document.getElementById("postcodeInput").value;
 
-    $.post('/Appointment/BookNow', {
-        dateOfBirth: dateOfBirth,
-        surname: surname,
-        postcode: postcode
-    })
-        .done(function (data) {
-            // Hide the pre-loading animation after the response
-            $('#loading').hide();
+   $.post('/Appointment/BookNow', {
+    dateOfBirth: dateOfBirth,
+    surname: surname,
+    postcode: postcode
+})
+    .done(function (data) {
+        // Hide the pre-loading animation after the response
+        $('#loading').hide();
 
-            if (data.success) {
-                // Patient found, show success message
-                $('.appointment-success').show();
-                $('.back-button').hide();
-                startTimer();
-                $('.appointment-failure').hide();
-                $('.appointment-duplicate').hide();
-                $('.appointment-summary').hide();
-
-            } else {
-                // Patient not found or invalid date format, show failure message
-                if (data.message == "Patient already has an appointment on the specified date.") {
-                    // Duplicate appointment found, show duplicate message
-                    $('.appointment-duplicate').show();
-                    $('.back-button').hide();
-                    // Start a timer to automatically go back to home after 10 seconds
-                    setTimeout(goHome, 10000);
-                } else {
-                    // Other failure message
-                    $('.appointment-failure').show();
-                    $('.back-button').hide();
-                    setTimeout(goHome, 10000);
-                }
-                $('.appointment-success').hide();
-                $('.appointment-summary').hide();
-
-                // Display the custom error message on the front-end
-                $('#errorMessage').text(data.message);
-            }
-        })
-        .fail(function () {
-            // Hide the pre-loading animation after the response
-            $('#loading').hide();
-
-            // Error occurred, show failure message
-            $('.appointment-failure').show();
+        if (data.success) {
+            // Patient found, show success message
+            $('.appointment-success').show();
             $('.back-button').hide();
-            setTimeout(goHome, 10000);
+              // Patient already checked in, hide the important info
+            $('.important-info-container').hide();
+            startTimer();
+            $('.appointment-failure').hide();
+            $('.appointment-duplicate').hide();
+            $('.appointment-summary').hide();
+        } else {
+            // Patient not found or invalid date format, show failure message
+            if (data.message.includes("Duplicate appointment found")) {
+                // Duplicate appointment found, show duplicate message
+                $('.appointment-duplicate').show();
+                $('.back-button').hide();
+                // Start a timer to automatically go back to home after 10 seconds
+                setTimeout(goHome, 10000);
+            } else {
+                // Other failure message
+                $('.appointment-failure').show();
+                $('.back-button').hide();
+                setTimeout(goHome, 100000);
+            }
             $('.appointment-success').hide();
             $('.appointment-summary').hide();
-            $('.appointment-duplicate').hide();
 
-            // Display a generic error message on the front-end
-            $('#errorMessage').text('An error occurred while booking the appointment. Please try again later.');
-        });
+            // Display the custom error message on the front-end
+            $('#errorMessage').text(data.message);
+        }
+    })
+    .fail(function () {
+        // Hide the pre-loading animation after the response
+        $('#loading').hide();
+
+        // Error occurred, show failure message
+        $('.appointment-failure').show();
+        $('.back-button').hide();
+        setTimeout(goHome, 100000);
+        $('.appointment-success').hide();
+        $('.appointment-summary').hide();
+        $('.appointment-duplicate').hide();
+
+        // Display a generic error message on the front-end
+        $('#errorMessage').text('An error occurred while booking the appointment. Please try again later.');
+    });
+
 }
 
 
@@ -334,7 +411,7 @@ function redirectToHome() {
 
 // Function to start the timer on a specific screen
 function startTimer() {
-    setTimeout(redirectToHome, 50000); // 15 seconds (15,000 milliseconds)
+    setTimeout(redirectToHome, 100000); // 15 seconds (15,000 milliseconds)
 }
 
 </script>
