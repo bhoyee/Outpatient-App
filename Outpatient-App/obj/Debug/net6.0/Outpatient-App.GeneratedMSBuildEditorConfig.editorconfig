@@ -20,12 +20,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQm9va0FwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Appointment/CheckIn.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ2hlY2tJbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Appointment/Confirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/CheckIn/CheckIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tJblxDaGVja0luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bhoyee-pc/Downloads/_Projects/_c\#/_asp.net-core/Outpatient-App/Outpatient-App/Views/Home/Action.cshtml]

@@ -1,0 +1,300 @@
+﻿@model Outpatient_App.Models.Appointment
+
+@{
+    ViewData["Title"] = "Check-In";
+}
+
+<div class="kiosk-container">
+    <h2>Check-In</h2>
+
+    <div class="row important-info-container">
+        <div class="col-md-12">
+            <p class="note-label">NOTE:</p>
+            <p class="important-info">You are checking in for today, which is @(DateTime.Now.ToString("dddd, MMMM d, yyyy")).</p>
+        </div>
+    </div>
+
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+
+    <style>
+        .selected {
+            color: red;
+        }
+    </style>
+
+   <!-- Step 1: Month Selection -->
+    <div class="month-selection step step-1">
+        <h2>Select the Month You Were Born</h2>
+        <div class="btn-group d-flex flex-wrap">
+            @for (int month = 1; month <= 12; month++)
+            {
+                DateTime monthDate = new DateTime(DateTime.Now.Year, month, 1);
+                string monthName = monthDate.ToString("MMMM");
+                int daysInMonth = month == 2 && DateTime.IsLeapYear(DateTime.Now.Year) ? 29 : DateTime.DaysInMonth(DateTime.Now.Year, month);
+                <button class="btn btn-info month-button m-2" onclick="selectMonth(@month, @daysInMonth)">@monthName</button>
+            }
+        </div>
+    </div>
+
+    <!-- Step 2: Day Selection -->
+    <div class="day-selection" style="display: none; step step-2">
+        <h2>Select the Day You Were Born</h2>
+        <div class="btn-group d-flex flex-wrap" id="daysContainer">
+        </div>
+    </div>
+
+    <!-- Step 3: Year of Birth Input -->
+    <div class="year-input" style="display: none; step step-3">
+        <h2>Enter the Year You Were Born</h2>
+        <input type="text" id="yearInput" class="form-control mb-3" readonly maxlength="4" />
+        <div class="btn-group d-flex flex-wrap">
+            @for (int i = 0; i <= 9; i++)
+            {
+                <button class="btn btn-info m-2" onclick="addToYear(@i)">@i</button>
+                if (i % 3 == 2)
+                {
+                    @:</div><div class="btn-group d-flex flex-wrap">
+                }
+            }
+            <button class="btn btn-danger m-2" onclick="clearYearInput()">Clear</button>
+        </div>
+    </div>
+
+    <!-- Step 4: First Letter of Surname Selection -->
+    <div class="surname-selection" style="display: none; step step-4">
+        <h2>Select the First Letter of Your Surname</h2>
+        <div class="btn-group d-flex flex-wrap">
+            @for (char letter = 'A'; letter <= 'Z'; letter++)
+            {
+    <button class="btn btn-info surname-button m-2" onclick="selectSurnameLetter('@letter')">@(letter)</button>
+            }
+        </div>
+        <input type="text" id="surnameInput" class="form-control mb-3" readonly hidden />
+
+
+                <!-- Pre-loading animation -->
+        <div class="loading-spinner" style="display: none;">
+            <img src="~/img/preloading_image.gif" alt="Loading..." />
+            <p>Loading...</p>
+        </div>
+    </div>
+
+
+
+    <!-- Step 7: Check-In Result - Success -->
+    <div class="check-in-success" style="display: none;">
+        <h2 class="mb-4">Check-In Successful</h2>
+        <p>You have successfully checked in.</p>
+
+        <button class="btn btn-primary mt-5 btn-lg" onclick="goHome()">Home</button>
+    </div>
+
+    <!-- Step 9: Already Checked In -->
+<div class="already-checked-in" style="display: none;">
+    <h2 class="mb-4">Already Checked In</h2>
+    <p>You have already checked in today.</p>
+
+    <button class="btn btn-primary mt-5 btn-lg" onclick="goHome()">Home</button>
+</div>
+
+
+    <!-- Step 8: Check-In Result - Failure -->
+    <div class="check-in-failure" style="display: none;">
+        <h2 class="mb-4">Failed to Check-In</h2>
+        <p>Sorry, we were unable to process your check-in at this time. Please try again later.</p>
+
+        <button class="btn btn-primary mt-5 btn-lg" onclick="goHome()">Home</button>
+    </div>
+
+    <!-- Back Button -->
+    <button class="btn btn-secondary mb-3 mt-5 back-button btn-lg" style="display: none;" onclick="goBack()">Back</button>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your script for the Check-In process -->
+<!-- Include Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your script for the Check-In process -->
+<script>
+    var selectedMonth = null;
+var selectedDay = null;
+var enteredYear = "";
+
+function selectMonth(month, daysInMonth) {
+    selectedMonth = month;
+    $('.month-button').removeClass('selected');
+    $(event.target).addClass('selected');
+
+    // Move to the next step (Day Selection)
+    $('.month-selection').hide();
+    $('.day-selection').show();
+    $('.back-button').show();
+
+    // Populate days for the selected month
+    var daysContainer = $('#daysContainer');
+    daysContainer.empty();
+    for (var day = 1; day <= daysInMonth; day++) {
+        daysContainer.append('<button id="dayButton' + day + '" class="btn btn-info day-button m-2" onclick="selectDay(' + day + ')" onmouseover="hoverDay(' + day + ')" onmouseout="unhoverDay(' + day + ')">' + day + '</button>');
+    }
+}
+
+function selectDay(day) {
+    selectedDay = day;
+    $('.day-button').removeClass('selected');
+    $(event.target).addClass('selected');
+
+    // Move to the next step (Year of Birth Input)
+    $('.day-selection').hide();
+    $('.year-input').show();
+    $('.back-button').show();
+}
+
+function hoverDay(day) {
+    $('#dayButton' + day).addClass('hovered');
+}
+
+function unhoverDay(day) {
+    $('#dayButton' + day).removeClass('hovered');
+}
+
+
+function addToYear(number) {
+    if (document.getElementById("yearInput").value.length < 4) {
+        document.getElementById("yearInput").value += number;
+        console.log("Year Input:", document.getElementById("yearInput").value);
+        if (document.getElementById("yearInput").value.length == 4) {
+            enteredYear = document.getElementById("yearInput").value; // Update enteredYear
+            console.log("Year of birth entered, calling selectSurname");
+            selectSurname(); // Call selectSurname without passing any arguments
+        }
+    }
+}
+
+
+
+function clearYearInput() {
+    document.getElementById("yearInput").value = "";
+    enteredYear = "";
+}
+
+
+function selectSurname() {
+    console.log("Selecting surname...");
+
+    // Hide the current step (Year of Birth Input)
+    $('.year-input').hide();
+
+    // Show the next step (Select the First Letter of Your Surname)
+    $('.surname-selection').show();
+    startTimer();
+}
+    var selectedMonth, selectedDay, enteredYear;
+
+    // Function to select the first letter of the surname
+    //function selectSurnameLetter(letter) {
+    //    $('#surnameInput').val(letter);
+    //    $('.surname-selection').hide();
+    //    checkInNow(); // Check-in when the letter is selected
+    //}
+
+         function selectSurnameLetter(letter) {
+              $('.loading-spinner').show();
+            $('#surnameInput').val(letter);
+            console.log("Selected Surname Letter:", letter);
+            checkInNow(); // Check-in when the letter is selected
+        }
+
+    // Function to check-in
+// Function to check-in
+// Function to check-in
+function checkInNow() {
+    var dateOfBirth = selectedMonth + "/" + selectedDay + "/" + enteredYear;
+    var surnameLetter = $('#surnameInput').val();
+
+    // Send an AJAX request to the server to check-in
+    $.post('/CheckIn/CheckIn', { dateOfBirth: dateOfBirth, surnameLetter: surnameLetter })
+        .done(function (data) {
+             $('.loading-spinner').hide();
+            if (data.success) {
+                if (data.alreadyCheckedIn) {
+                   // Patient already checked in, hide the important info
+                    $('.important-info-container').hide();
+
+                    // Patient already checked in
+                    $('.already-checked-in').show();
+                    startTimer();
+                    $('.check-in-success').hide();
+                    $('.check-in-failure').hide();
+                } else {
+                    // Check-in successful, show success message
+                    $('.check-in-success').show();
+                    startTimer();
+                    $('.check-in-failure').hide();
+                    $('.already-checked-in').hide();
+                }
+            } else {
+                 $('.important-info-container').hide();
+                // Check-in failed, show failure message
+                $('.check-in-failure').show();
+                startTimer();
+                $('.check-in-success').hide();
+                $('.already-checked-in').hide();
+            }
+
+            // Hide unnecessary steps and buttons
+            $('.back-button').hide();
+            $('.month-selection').hide();
+            $('.day-selection').hide();
+            $('.year-input').hide();
+            $('.surname-selection').hide();
+        })
+        .fail(function () {
+            // Error occurred, show failure message
+            $('.check-in-failure').show();
+            $('.check-in-success').hide();
+            $('.already-checked-in').hide();
+
+            // Display a generic error message on the front-end
+            $('#errorMessage').text('An error occurred while checking in. Please try again later.');
+        });
+}
+
+
+
+    // Function to go back to the previous step
+    function goBack() {
+        // Go back to the previous step
+        if ($('.surname-selection').is(':visible')) {
+            $('.surname-selection').hide();
+            $('.year-input').show();
+        } else if ($('.year-input').is(':visible')) {
+            $('.year-input').hide();
+            $('.day-selection').show();
+        } else if ($('.day-selection').is(':visible')) {
+            $('.day-selection').hide();
+            $('.month-selection').show();
+            $('.back-button').hide();
+        }
+    }
+
+    function goHome() {
+    window.location.href = '/Home/Index'; // Redirect to the home page
+}
+
+// Function to handle automatic redirection
+function redirectToHome() {
+    window.location.href = "/"; // Replace "/" with the actual URL to your home page
+}
+
+// Function to start the timer on a specific screen
+function startTimer() {
+    setTimeout(redirectToHome, 50000); // 15 seconds (15,000 milliseconds)
+}
+
+</script>
+
+</div>
