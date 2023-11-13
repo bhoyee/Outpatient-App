@@ -1,0 +1,278 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model Outpatient_App.Models.Appointment
+
+@{
+    ViewData["Title"] = " Dashboard";
+    Layout = "_MyLayout";
+}
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+
+<!-- DataTables JS -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+                    <!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+ <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+ <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+</div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- totalAppointmentsForToday -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total Appointments Today</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalAppointmentsForToday">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                     <!-- totalChecked Card Example -->
+                        <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Total Checked-in Appointments</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalCheckedInAppointments">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- totalAppointmentsForNextDay -->
+                          <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Total Appointments Next Day</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="totalAppointmentsForNextDay">Loading...</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+ <!-- Assuming this is part of your Razor view -->
+
+  <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+             <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <label for="searchInput">Search:</label>
+                        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search">
+
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Date of Birth</th>
+                                    <th scope="col">Postcode</th>
+                                    <th scope="col">Checked In</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTableBody">
+                                <!-- Table rows will be dynamically added here using JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+ 
+
+@section Scripts {
+    <script>
+        function updateAppointments() {
+            // Use fetch to make a GET request to your UpdateAppointments action
+            fetch('/Account/UpdateAppointments')
+                .then(response => {
+                    // Check if the response status is OK
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();  // Parse the JSON response
+                })
+                .then(data => {
+                    // Log the received data for debugging
+                    console.log("Received data:", data);
+
+                    // Check if the data is defined and has the expected properties
+                    if (data) {
+                        document.getElementById("totalAppointmentsForToday").innerText = data.totalAppointmentsForToday;
+                        document.getElementById("totalAppointmentsForNextDay").innerText = data.totalAppointmentsForNextDay;
+                        document.getElementById("totalCheckedInAppointments").innerText = data.totalCheckedInAppointments;
+                    } else {
+                        console.error("Invalid data format received from the server.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error updating appointments:", error);
+                });
+        }
+
+
+
+
+        // Call updateAppointments initially and every 5 seconds (5000 milliseconds)
+        updateAppointments();
+        setInterval(updateAppointments, 5000);
+
+
+        //get full appointment for today
+    function getAppointmentsTodayDetails() {
+            fetch('/Appointment/AppointmentsTodayDetails') 
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Received data:", data); // Log the received data for debugging
+
+                    // Get the table body
+                    const tableBody = document.getElementById('appointmentsTableBody');
+
+                    // Clear existing rows
+                    tableBody.innerHTML = '';
+
+                    // Add data rows
+                    data.forEach(appointment => {
+                        const row = tableBody.insertRow();
+                        const cells = [
+                            `${appointment.fullName}`, // Updated to match the casing
+                            new Date(appointment.dateOfBirth).toLocaleDateString(),
+                            appointment.postcode,
+                            appointment.checkedIn ? 'Yes' : 'No'
+                        ];
+
+                        cells.forEach(cellData => {
+                            const cell = row.insertCell();
+                            cell.textContent = cellData;
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching appointment details:', error);
+                });
+        }
+
+        // Call the function initially and refresh every 5 seconds
+        getAppointmentsTodayDetails();
+        setInterval(getAppointmentsTodayDetails, 5000);
+        </script>
+
+  
+    }
+
