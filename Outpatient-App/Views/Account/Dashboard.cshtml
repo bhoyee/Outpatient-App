@@ -9,11 +9,7 @@
     Layout = "_MyLayout";
 }
 
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 
-<!-- DataTables JS -->
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
                     <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -160,35 +156,30 @@
                         </div>
                     </div>
 
+                     <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Full Name</th>
+                                            <th scope="col">Date of Birth</th>
+                                            <th scope="col">Postcode</th>
+                                            <th scope="col">Checked In</th>
+                                        </tr>
+                                    </thead>
 
-                    
-             <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <label for="searchInput">Search:</label>
-                        <input type="text" id="searchInput" class="form-control mb-3" placeholder="Type to search">
-
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Full Name</th>
-                                    <th scope="col">Date of Birth</th>
-                                    <th scope="col">Postcode</th>
-                                    <th scope="col">Checked In</th>
-                                </tr>
-                            </thead>
-                            <tbody id="appointmentsTableBody">
+                                     <tbody id="appointmentsTableBody">
                                 <!-- Table rows will be dynamically added here using JavaScript -->
-                            </tbody>
-                        </table>
+                                     </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
+                    
  
 
 @section Scripts {
@@ -257,10 +248,18 @@
                             appointment.checkedIn ? 'Yes' : 'No'
                         ];
 
-                        cells.forEach(cellData => {
+                        cells.forEach((cellData, index) => {
                             const cell = row.insertCell();
                             cell.textContent = cellData;
+
+                            // Check if the current cell is the "Checked In" column (index 3)
+                            if (index === 3) {
+                                // Set background color and text color based on the "Checked In" value
+                                cell.style.backgroundColor = appointment.checkedIn ? 'green' : 'red';
+                                cell.style.color = 'white';
+                            }
                         });
+
                     });
                 })
                 .catch(error => {
