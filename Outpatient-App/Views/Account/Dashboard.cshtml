@@ -184,6 +184,7 @@
 
 @section Scripts {
     <script>
+
         function updateAppointments() {
             // Use fetch to make a GET request to your UpdateAppointments action
             fetch('/Account/UpdateAppointments')
@@ -220,9 +221,10 @@
         setInterval(updateAppointments, 5000);
 
 
+
         //get full appointment for today
-    function getAppointmentsTodayDetails() {
-            fetch('/Appointment/AppointmentsTodayDetails') 
+        function getAppointmentsTodayDetails() {
+            fetch('/Appointment/AppointmentsTodayDetails')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -230,7 +232,7 @@
                     return response.json();
                 })
                 .then(data => {
-                    console.log("Received data:", data); // Log the received data for debugging
+                    console.log("Received data:", data);
 
                     // Get the table body
                     const tableBody = document.getElementById('appointmentsTableBody');
@@ -242,7 +244,7 @@
                     data.forEach(appointment => {
                         const row = tableBody.insertRow();
                         const cells = [
-                            `${appointment.fullName}`, // Updated to match the casing
+                            `${appointment.fullName}`,
                             new Date(appointment.dateOfBirth).toLocaleDateString(),
                             appointment.postcode,
                             appointment.checkedIn ? 'Yes' : 'No'
@@ -259,7 +261,11 @@
                                 cell.style.color = 'white';
                             }
                         });
+                    });
 
+                    // Initialize DataTables after adding rows
+                    $(document).ready(function () {
+                        $('#dataTable').DataTable();
                     });
                 })
                 .catch(error => {
@@ -270,6 +276,8 @@
         // Call the function initially and refresh every 5 seconds
         getAppointmentsTodayDetails();
         setInterval(getAppointmentsTodayDetails, 5000);
+
+
         </script>
 
   
