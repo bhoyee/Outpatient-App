@@ -1,0 +1,64 @@
+﻿@model Outpatient_App.Models.Patient
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    
+    <!-- Notification area -->
+    <div id="notificationArea" class="mb-3">
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.Success
+            </div>
+        }
+        else if (ViewBag.Duplicate != null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @ViewBag.Duplicate
+            </div>
+        }
+        else if (ViewBag.Failure != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.Failure
+            </div>
+        }
+    </div>
+    
+    <!-- Form fields for patient details -->
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <!-- Add other fields for Surname, HealthCardID, DateOfBirth, Postcode, etc. -->
+
+    <button type="submit" class="btn btn-primary">Add Patient</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Function to show notification messages
+        function showNotification(type, message) {
+            var notificationArea = document.getElementById('notificationArea');
+            var alertClass = '';
+
+            switch (type) {
+                case 'success':
+                    alertClass = 'alert-success';
+                    break;
+                case 'duplicate':
+                    alertClass = 'alert-warning';
+                    break;
+                case 'failure':
+                    alertClass = 'alert-danger';
+                    break;
+                default:
+                    alertClass = 'alert-info';
+            }
+
+            var notificationHtml = '<div class="alert ' + alertClass + '" role="alert">' + message + '</div>';
+            notificationArea.innerHTML = notificationHtml;
+        }
+    </script>
+}
