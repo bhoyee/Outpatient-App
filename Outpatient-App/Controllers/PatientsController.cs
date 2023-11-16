@@ -34,7 +34,7 @@ namespace Outpatient_App.Controllers
                     var existingPatient = _context.Patients.FirstOrDefault(p => p.HealthCardID == patient.HealthCardID);
                     if (existingPatient != null)
                     {
-                        ModelState.AddModelError("HealthCardID", "Health Card ID already exists");
+                        ViewBag.Duplicate = "Health Card ID already exists";
                         return View(patient);
                     }
 
@@ -42,6 +42,7 @@ namespace Outpatient_App.Controllers
                     _context.SaveChanges();
 
                     _logger.LogInformation("New patient added: {PatientId}", patient.PatientID); // Log successful addition
+                    return View(patient);
 
                     return RedirectToAction("Success");
                 }
@@ -49,6 +50,7 @@ namespace Outpatient_App.Controllers
                 {
                     _logger.LogError(ex, "Error adding new patient."); // Log error if something goes wrong
                     ModelState.AddModelError(string.Empty, "Error adding new patient.");
+                    ViewBag.Failure = "Error adding new patient";
                     return View(patient);
                 }
             }
