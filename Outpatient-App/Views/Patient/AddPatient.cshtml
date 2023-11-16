@@ -2,7 +2,7 @@
 
 <form asp-action="Create" method="post">
     @Html.AntiForgeryToken()
-    
+
     <!-- Notification area -->
     <div id="notificationArea" class="mb-3">
         @if (ViewBag.Success != null)
@@ -24,14 +24,37 @@
             </div>
         }
     </div>
-    
+
     <!-- Form fields for patient details -->
     <div class="form-group">
         <label asp-for="FirstName"></label>
         <input asp-for="FirstName" class="form-control" />
         <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
-    <!-- Add other fields for Surname, HealthCardID, DateOfBirth, Postcode, etc. -->
+
+    <div class="form-group">
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HealthCardID"></label>
+        <input asp-for="HealthCardID" class="form-control" />
+        <span asp-validation-for="HealthCardID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" type="date" class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Postcode"></label>
+        <input asp-for="Postcode" class="form-control" />
+        <span asp-validation-for="Postcode" class="text-danger"></span>
+    </div>
 
     <button type="submit" class="btn btn-primary">Add Patient</button>
 </form>
