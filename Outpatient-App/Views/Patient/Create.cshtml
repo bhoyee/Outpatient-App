@@ -13,7 +13,7 @@
  <i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
 
-<form asp-action="Create" method="post">
+<form id="createForm" asp-action="Create" method="post">
     @Html.AntiForgeryToken()
 
     <!-- Notification area -->
@@ -74,7 +74,6 @@
 
 @section Scripts {
     <script>
-        // Function to show notification messages
         function showNotification(type, message) {
             var notificationArea = document.getElementById('notificationArea');
             var alertClass = '';
@@ -95,6 +94,24 @@
 
             var notificationHtml = '<div class="alert ' + alertClass + '" role="alert">' + message + '</div>';
             notificationArea.innerHTML = notificationHtml;
+
+            // Clear form fields on success
+            if (type === 'success') {
+                var form = document.getElementById('createForm');
+                if (form) {
+                    form.reset();
+                }
+            }
+        }
+
+        // Get the form and attach the handleSubmit function to its submit event
+        var form = document.getElementById('createForm');
+        if (form) {
+            form.addEventListener('submit', function(event) {
+                // Allow default form submission
+                // The form will be submitted to the server for processing
+                return true;
+            });
         }
     </script>
 }

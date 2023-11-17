@@ -31,10 +31,15 @@ namespace Outpatient_App.Controllers
             {
                 try
                 {
-                    var existingPatient = _context.Patients.FirstOrDefault(p => p.HealthCardID == patient.HealthCardID);
+                    var existingPatient = _context.Patients.FirstOrDefault(p =>
+                        p.FirstName == patient.FirstName &&
+                        p.Surname == patient.Surname &&
+                        p.DateOfBirth == patient.DateOfBirth &&
+                        p.Postcode == patient.Postcode);
+
                     if (existingPatient != null)
                     {
-                        ViewBag.Duplicate = "Health Card ID already exists";
+                        ViewBag.Duplicate = "Patient with similar details already exists";
                         return View(patient);
                     }
 
@@ -43,7 +48,8 @@ namespace Outpatient_App.Controllers
 
                     _logger.LogInformation("New patient added: {PatientId}", patient.PatientID); // Log successful addition
                     ViewBag.Success = "Patient added successfully";
-                    return View(patient);
+                    ModelState.Clear(); // Clear ModelState to avoid repopulating old data in the form
+                    return View(); // Return an empty form after successful addition
 
                 }
                 catch (Exception ex)
@@ -57,6 +63,7 @@ namespace Outpatient_App.Controllers
 
             return View(patient);
         }
+
 
         public IActionResult Success()
         {
