@@ -1,0 +1,940 @@
+2023-11-17 00:03:37.402 +00:00 [INF] User profile is available. Using 'C:\Users\Bhoyee-pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-17 00:03:38.796 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:40.080 +00:00 [INF] Executed DbCommand (94ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:03:40.194 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:03:40.238 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:40.254 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-11-17 00:03:40.573 +00:00 [INF] Now listening on: https://localhost:7191
+2023-11-17 00:03:40.576 +00:00 [INF] Now listening on: http://localhost:5204
+2023-11-17 00:03:40.584 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 00:03:40.588 +00:00 [INF] Hosting environment: Development
+2023-11-17 00:03:40.590 +00:00 [INF] Content root path: C:\Users\Bhoyee-pc\Downloads\_Projects\_c#\_asp.net-core\Outpatient-App\Outpatient-App\
+2023-11-17 00:03:41.337 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/ - -
+2023-11-17 00:03:41.614 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:03:41.681 +00:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Outpatient_App.Controllers.HomeController (Outpatient-App).
+2023-11-17 00:03:41.802 +00:00 [INF] Executing action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:03:41.824 +00:00 [INF] Executed action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6904ms.
+2023-11-17 00:03:41.851 +00:00 [INF] Executing ViewResult, running view Index.
+2023-11-17 00:03:42.387 +00:00 [INF] Executed ViewResult - view Index executed in 526.1991ms.
+2023-11-17 00:03:42.412 +00:00 [INF] Executed action Outpatient_App.Controllers.HomeController.Index (Outpatient-App) in 722.4213ms
+2023-11-17 00:03:42.420 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:03:42.640 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/ - - - 200 - text/html;+charset=utf-8 1320.6631ms
+2023-11-17 00:03:42.789 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/lib/bootstrap/dist/css/bootstrap.min.css - -
+2023-11-17 00:03:42.794 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - -
+2023-11-17 00:03:42.795 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:03:42.792 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:03:42.790 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - -
+2023-11-17 00:03:42.792 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/lib/bootstrap/dist/js/bootstrap.bundle.min.js - -
+2023-11-17 00:03:42.793 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/lib/jquery/dist/jquery.min.js - -
+2023-11-17 00:03:42.790 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/css/site.css?v=_cDhiK4XoqV_8ewk2u6tVrEpZq2FosQvIMqiILbs5Dg - -
+2023-11-17 00:03:42.841 +00:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2023-11-17 00:03:42.841 +00:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2023-11-17 00:03:42.857 +00:00 [INF] The file /css/site.css was not modified
+2023-11-17 00:03:42.855 +00:00 [INF] The file /js/site.js was not modified
+2023-11-17 00:03:42.841 +00:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2023-11-17 00:03:42.963 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - - - 404 0 - 172.1936ms
+2023-11-17 00:03:42.974 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/css/site.css?v=_cDhiK4XoqV_8ewk2u6tVrEpZq2FosQvIMqiILbs5Dg - - - 304 - text/css 183.5107ms
+2023-11-17 00:03:42.977 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/js/site.js?v=8ZRc1sGeVrPBx4lD717BgRaQekyh78QKV9SKsdt638U - - - 304 - application/javascript 182.8282ms
+2023-11-17 00:03:42.977 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 185.4666ms
+2023-11-17 00:03:42.977 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - - 304 - application/javascript 185.0109ms
+2023-11-17 00:03:42.977 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/lib/jquery/dist/jquery.min.js - - - 304 - application/javascript 184.1967ms
+2023-11-17 00:03:42.977 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/lib/bootstrap/dist/css/bootstrap.min.css - - - 304 - text/css 188.2552ms
+2023-11-17 00:03:42.997 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 202.2513ms
+2023-11-17 00:03:48.920 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Identity/Account/Login - -
+2023-11-17 00:03:48.934 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:03:49.012 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:03:49.059 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2023-11-17 00:03:49.082 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2023-11-17 00:03:49.089 +00:00 [INF] Executed handler method OnGetAsync, returned result .
+2023-11-17 00:03:49.106 +00:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2023-11-17 00:03:49.110 +00:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2023-11-17 00:03:49.452 +00:00 [INF] Executed page /Account/Login in 434.7442ms
+2023-11-17 00:03:49.454 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:03:49.468 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 548.5225ms
+2023-11-17 00:03:49.499 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/fontawesome-free/css/all.min.css - -
+2023-11-17 00:03:49.507 +00:00 [INF] The file /outp/vendor/fontawesome-free/css/all.min.css was not modified
+2023-11-17 00:03:49.510 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:03:49.510 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/css/sb-admin-2.min.css - -
+2023-11-17 00:03:49.512 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/js/sb-admin-2.min.js - -
+2023-11-17 00:03:49.512 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:03:49.512 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/jquery-easing/jquery.easing.min.js - -
+2023-11-17 00:03:49.515 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 5.1119ms
+2023-11-17 00:03:49.517 +00:00 [INF] The file /outp/css/sb-admin-2.min.css was not modified
+2023-11-17 00:03:49.518 +00:00 [INF] The file /outp/js/sb-admin-2.min.js was not modified
+2023-11-17 00:03:49.544 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/css/sb-admin-2.min.css - - - 304 - text/css 33.8593ms
+2023-11-17 00:03:49.547 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/js/sb-admin-2.min.js - - - 304 - application/javascript 35.5536ms
+2023-11-17 00:03:49.523 +00:00 [INF] The file /outp/vendor/jquery-easing/jquery.easing.min.js was not modified
+2023-11-17 00:03:49.511 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/jquery/jquery.min.js - -
+2023-11-17 00:03:49.511 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/bootstrap/js/bootstrap.bundle.min.js - -
+2023-11-17 00:03:49.513 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/fontawesome-free/css/all.min.css - - - 304 - text/css 14.2495ms
+2023-11-17 00:03:49.552 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/jquery-easing/jquery.easing.min.js - - - 304 - application/javascript 40.6607ms
+2023-11-17 00:03:49.555 +00:00 [INF] The file /outp/vendor/jquery/jquery.min.js was not modified
+2023-11-17 00:03:49.556 +00:00 [INF] The file /outp/vendor/bootstrap/js/bootstrap.bundle.min.js was not modified
+2023-11-17 00:03:49.561 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.2397ms
+2023-11-17 00:03:49.561 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/jquery/jquery.min.js - - - 304 - application/javascript 50.0993ms
+2023-11-17 00:03:49.564 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/bootstrap/js/bootstrap.bundle.min.js - - - 304 - application/javascript 52.9278ms
+2023-11-17 00:03:51.057 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 262
+2023-11-17 00:03:51.068 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:03:51.070 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:03:51.140 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2023-11-17 00:03:51.212 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:51.256 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 00:03:51.668 +00:00 [INF] Executed DbCommand (22ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-11-17 00:03:51.813 +00:00 [INF] Executed DbCommand (21ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 00:03:51.844 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-11-17 00:03:51.874 +00:00 [INF] User logged in.
+2023-11-17 00:03:51.886 +00:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2023-11-17 00:03:51.902 +00:00 [INF] Executing LocalRedirectResult, redirecting to /Account/Dashboard.
+2023-11-17 00:03:51.905 +00:00 [INF] Executed page /Account/Login in 832.3516ms
+2023-11-17 00:03:51.907 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:03:51.919 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/Dashboard - -
+2023-11-17 00:03:51.925 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 262 - 302 0 - 867.5193ms
+2023-11-17 00:03:51.938 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:03:51.952 +00:00 [INF] Route matched with {action = "Dashboard", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DashboardAsync() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:03:52.002 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:03:52.031 +00:00 [INF] Dashboard action started.
+2023-11-17 00:03:52.041 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:52.124 +00:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppointmentID], [a].[CheckedIn], [a].[PatientID], [a].[ScheduledTime]
+FROM [Appointments] AS [a]
+2023-11-17 00:03:52.181 +00:00 [INF] data
+2023-11-17 00:03:52.206 +00:00 [INF] Updating appointments...
+2023-11-17 00:03:52.350 +00:00 [INF] Executed DbCommand (21ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:03:52.400 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:03:52.447 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:03:52.632 +00:00 [INF] Executed DbCommand (22ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:03:52.650 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:03:52.667 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:03:52.688 +00:00 [INF] Dashboard action completed successfully.
+2023-11-17 00:03:52.695 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 690.7028ms.
+2023-11-17 00:03:52.709 +00:00 [INF] Executing ViewResult, running view Dashboard.
+2023-11-17 00:03:52.836 +00:00 [INF] Executed ViewResult - view Dashboard executed in 128.0394ms.
+2023-11-17 00:03:52.839 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) in 879.6144ms
+2023-11-17 00:03:52.842 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:03:52.853 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/Dashboard - - - 200 - text/html;+charset=utf-8 934.1801ms
+2023-11-17 00:03:52.901 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/css/sb-admin-2.css?v=J5dGj92SnlF6l8eu8eBs7xu1fQ3QYJP8CE8hAmqkGlE - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/img/undraw_profile.svg - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:03:52.903 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/js/demo/datatables-demo.js - -
+2023-11-17 00:03:52.903 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/js/demo/chart-pie-demo.js - -
+2023-11-17 00:03:52.906 +00:00 [INF] The file /outp/img/undraw_profile.svg was not modified
+2023-11-17 00:03:52.907 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 4.5194ms
+2023-11-17 00:03:52.916 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/img/undraw_profile.svg - - - 304 - image/svg+xml 13.7984ms
+2023-11-17 00:03:52.909 +00:00 [INF] The file /outp/js/demo/datatables-demo.js was not modified
+2023-11-17 00:03:52.914 +00:00 [INF] The file /outp/js/demo/chart-pie-demo.js was not modified
+2023-11-17 00:03:52.903 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/datatables/dataTables.bootstrap4.min.js - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/datatables/jquery.dataTables.min.js - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/js/demo/chart-area-demo.js - -
+2023-11-17 00:03:52.905 +00:00 [INF] The file /outp/css/sb-admin-2.css was not modified
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/datatables/dataTables.bootstrap4.min.css - -
+2023-11-17 00:03:52.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/chart.js/Chart.min.js - -
+2023-11-17 00:03:52.922 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/js/demo/datatables-demo.js - - - 304 - application/javascript 18.8211ms
+2023-11-17 00:03:52.922 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/js/demo/chart-pie-demo.js - - - 304 - application/javascript 19.8914ms
+2023-11-17 00:03:52.924 +00:00 [INF] The file /outp/vendor/datatables/dataTables.bootstrap4.min.js was not modified
+2023-11-17 00:03:52.924 +00:00 [INF] The file /outp/vendor/datatables/jquery.dataTables.min.js was not modified
+2023-11-17 00:03:52.926 +00:00 [INF] The file /outp/js/demo/chart-area-demo.js was not modified
+2023-11-17 00:03:52.930 +00:00 [INF] The file /outp/vendor/datatables/dataTables.bootstrap4.min.css was not modified
+2023-11-17 00:03:52.933 +00:00 [INF] The file /outp/vendor/chart.js/Chart.min.js was not modified
+2023-11-17 00:03:52.946 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/datatables/dataTables.bootstrap4.min.css - - - 304 - text/css 43.4860ms
+2023-11-17 00:03:52.945 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/datatables/dataTables.bootstrap4.min.js - - - 304 - application/javascript 42.7522ms
+2023-11-17 00:03:52.945 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/css/sb-admin-2.css?v=J5dGj92SnlF6l8eu8eBs7xu1fQ3QYJP8CE8hAmqkGlE - - - 304 - text/css 44.0028ms
+2023-11-17 00:03:52.945 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/js/demo/chart-area-demo.js - - - 304 - application/javascript 43.1656ms
+2023-11-17 00:03:52.945 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/datatables/jquery.dataTables.min.js - - - 304 - application/javascript 42.8720ms
+2023-11-17 00:03:52.946 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/chart.js/Chart.min.js - - - 304 - application/javascript 43.7818ms
+2023-11-17 00:03:52.946 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 42.8047ms
+2023-11-17 00:03:53.006 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/outp/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 - -
+2023-11-17 00:03:53.010 +00:00 [INF] The file /outp/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 was not modified
+2023-11-17 00:03:53.012 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/outp/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 - - - 304 - font/woff2 6.9957ms
+2023-11-17 00:03:53.073 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - -
+2023-11-17 00:03:53.073 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - -
+2023-11-17 00:03:53.078 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:03:53.078 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:03:53.086 +00:00 [INF] Route matched with {action = "UpdateAppointments", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAppointments() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:03:53.088 +00:00 [INF] Route matched with {action = "AppointmentsTodayDetails", controller = "Appointment", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AppointmentsTodayDetails() on controller Outpatient_App.Controllers.AppointmentController (Outpatient-App).
+2023-11-17 00:03:53.132 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:03:53.154 +00:00 [INF] Updating appointments...
+2023-11-17 00:03:53.199 +00:00 [INF] Executing action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:03:53.220 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:53.247 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:03:53.259 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:03:53.289 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:03:53.308 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:03:53.355 +00:00 [INF] Executed DbCommand (12ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[FirstName], [p].[Surname], [p].[DateOfBirth], [p].[Postcode], [a].[CheckedIn]
+FROM [Appointments] AS [a]
+INNER JOIN [Patients] AS [p] ON [a].[PatientID] = [p].[PatientID]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:03:53.393 +00:00 [INF] Raw appointmentDetails: []
+2023-11-17 00:03:53.396 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:03:53.440 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:03:53.441 +00:00 [INF] Formatted details: []
+2023-11-17 00:03:53.449 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:03:53.450 +00:00 [INF] Executed action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 248.1196ms.
+2023-11-17 00:03:53.451 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 315.2854ms.
+2023-11-17 00:03:53.460 +00:00 [INF] Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[<>f__AnonymousType16`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType17`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:03:53.460 +00:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType11`4[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType12`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:03:53.541 +00:00 [INF] Executed action Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) in 407.3878ms
+2023-11-17 00:03:53.546 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:03:53.550 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - - - 200 - application/json;+charset=utf-8 476.7077ms
+2023-11-17 00:03:53.555 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) in 465.4445ms
+2023-11-17 00:03:53.559 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:03:53.561 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - - - 200 - application/json;+charset=utf-8 488.2920ms
+2023-11-17 00:03:55.699 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patients/Create - -
+2023-11-17 00:03:55.729 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.PatientsController.Create (Outpatient-App)'
+2023-11-17 00:03:55.733 +00:00 [INF] Route matched with {action = "Create", controller = "Patients", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Outpatient_App.Controllers.PatientsController (Outpatient-App).
+2023-11-17 00:03:55.772 +00:00 [INF] Executing action method Outpatient_App.Controllers.PatientsController.Create (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:03:55.776 +00:00 [INF] Executed action method Outpatient_App.Controllers.PatientsController.Create (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.5594ms.
+2023-11-17 00:03:55.781 +00:00 [INF] Executing ViewResult, running view Create.
+2023-11-17 00:03:55.852 +00:00 [ERR] The view 'Create' was not found. Searched locations: ["/Views/Patients/Create.en.cshtml","/Views/Patients/Create.cshtml","/Views/Shared/Create.en.cshtml","/Views/Shared/Create.cshtml","/Pages/Shared/Create.en.cshtml","/Pages/Shared/Create.cshtml"]
+2023-11-17 00:03:55.917 +00:00 [INF] Executed action Outpatient_App.Controllers.PatientsController.Create (Outpatient-App) in 179.4714ms
+2023-11-17 00:03:55.934 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.PatientsController.Create (Outpatient-App)'
+2023-11-17 00:03:56.105 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'Create' was not found. The following locations were searched:
+/Views/Patients/Create.en.cshtml
+/Views/Patients/Create.cshtml
+/Views/Shared/Create.en.cshtml
+/Views/Shared/Create.cshtml
+/Pages/Shared/Create.en.cshtml
+/Pages/Shared/Create.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|22_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Localization.RequestLocalizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-11-17 00:03:56.224 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patients/Create - - - 500 - text/html;+charset=utf-8 525.4389ms
+2023-11-17 00:03:56.277 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:03:56.280 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:03:56.284 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 4.7398ms
+2023-11-17 00:03:56.324 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.4121ms
+2023-11-17 00:05:36.126 +00:00 [INF] User profile is available. Using 'C:\Users\Bhoyee-pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-17 00:05:37.172 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:38.031 +00:00 [INF] Executed DbCommand (75ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:05:38.155 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:05:38.210 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:38.223 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-11-17 00:05:38.470 +00:00 [INF] Now listening on: https://localhost:7191
+2023-11-17 00:05:38.473 +00:00 [INF] Now listening on: http://localhost:5204
+2023-11-17 00:05:38.482 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 00:05:38.487 +00:00 [INF] Hosting environment: Development
+2023-11-17 00:05:38.489 +00:00 [INF] Content root path: C:\Users\Bhoyee-pc\Downloads\_Projects\_c#\_asp.net-core\Outpatient-App\Outpatient-App\
+2023-11-17 00:05:39.094 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/ - -
+2023-11-17 00:05:39.225 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:05:39.241 +00:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Outpatient_App.Controllers.HomeController (Outpatient-App).
+2023-11-17 00:05:39.309 +00:00 [INF] Executing action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:05:39.319 +00:00 [INF] Executed action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7134ms.
+2023-11-17 00:05:39.329 +00:00 [INF] Executing ViewResult, running view Index.
+2023-11-17 00:05:39.466 +00:00 [INF] Executed ViewResult - view Index executed in 135.7909ms.
+2023-11-17 00:05:39.475 +00:00 [INF] Executed action Outpatient_App.Controllers.HomeController.Index (Outpatient-App) in 228.6247ms
+2023-11-17 00:05:39.478 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:05:39.538 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/ - - - 200 - text/html;+charset=utf-8 447.5838ms
+2023-11-17 00:05:39.562 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:05:39.562 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:05:39.562 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - -
+2023-11-17 00:05:39.572 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 9.8218ms
+2023-11-17 00:05:39.574 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - - - 404 0 - 11.9782ms
+2023-11-17 00:05:39.616 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.6909ms
+2023-11-17 00:05:44.318 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Identity/Account/Login - -
+2023-11-17 00:05:44.362 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:05:44.433 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:05:44.513 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2023-11-17 00:05:44.536 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2023-11-17 00:05:44.543 +00:00 [INF] Executed handler method OnGetAsync, returned result .
+2023-11-17 00:05:44.561 +00:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2023-11-17 00:05:44.566 +00:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2023-11-17 00:05:44.881 +00:00 [INF] Executed page /Account/Login in 414.8668ms
+2023-11-17 00:05:44.941 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:05:44.950 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 632.1236ms
+2023-11-17 00:05:44.996 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:05:44.998 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:05:45.000 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 4.5718ms
+2023-11-17 00:05:45.042 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.7434ms
+2023-11-17 00:05:46.494 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305
+2023-11-17 00:05:46.506 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:05:46.510 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:05:46.582 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2023-11-17 00:05:46.633 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:46.662 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 00:05:47.053 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-11-17 00:05:47.192 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 00:05:47.221 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-11-17 00:05:47.236 +00:00 [INF] User logged in.
+2023-11-17 00:05:47.248 +00:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2023-11-17 00:05:47.264 +00:00 [INF] Executing LocalRedirectResult, redirecting to /Account/Dashboard.
+2023-11-17 00:05:47.268 +00:00 [INF] Executed page /Account/Login in 755.9621ms
+2023-11-17 00:05:47.272 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:05:47.280 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/Dashboard - -
+2023-11-17 00:05:47.285 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305 - 302 0 - 790.9899ms
+2023-11-17 00:05:47.285 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:05:47.299 +00:00 [INF] Route matched with {action = "Dashboard", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DashboardAsync() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:05:47.348 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:05:47.365 +00:00 [INF] Dashboard action started.
+2023-11-17 00:05:47.377 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:47.445 +00:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppointmentID], [a].[CheckedIn], [a].[PatientID], [a].[ScheduledTime]
+FROM [Appointments] AS [a]
+2023-11-17 00:05:47.520 +00:00 [INF] data
+2023-11-17 00:05:47.533 +00:00 [INF] Updating appointments...
+2023-11-17 00:05:47.645 +00:00 [INF] Executed DbCommand (11ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:05:47.678 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:05:47.711 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:05:47.880 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:05:47.893 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:05:47.900 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:05:47.907 +00:00 [INF] Dashboard action completed successfully.
+2023-11-17 00:05:47.915 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 561.9211ms.
+2023-11-17 00:05:47.930 +00:00 [INF] Executing ViewResult, running view Dashboard.
+2023-11-17 00:05:48.020 +00:00 [INF] Executed ViewResult - view Dashboard executed in 90.8923ms.
+2023-11-17 00:05:48.023 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) in 718.5824ms
+2023-11-17 00:05:48.026 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:05:48.038 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/Dashboard - - - 200 - text/html;+charset=utf-8 758.8697ms
+2023-11-17 00:05:48.071 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:05:48.072 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:05:48.075 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.6348ms
+2023-11-17 00:05:48.116 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.9136ms
+2023-11-17 00:05:48.144 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - -
+2023-11-17 00:05:48.145 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - -
+2023-11-17 00:05:48.150 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:05:48.150 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:05:48.159 +00:00 [INF] Route matched with {action = "UpdateAppointments", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAppointments() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:05:48.159 +00:00 [INF] Route matched with {action = "AppointmentsTodayDetails", controller = "Appointment", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AppointmentsTodayDetails() on controller Outpatient_App.Controllers.AppointmentController (Outpatient-App).
+2023-11-17 00:05:48.194 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:05:48.232 +00:00 [INF] Executing action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:05:48.240 +00:00 [INF] Updating appointments...
+2023-11-17 00:05:48.250 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:48.256 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:05:48.267 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:05:48.286 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:05:48.301 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:05:48.344 +00:00 [INF] Executed DbCommand (10ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[FirstName], [p].[Surname], [p].[DateOfBirth], [p].[Postcode], [a].[CheckedIn]
+FROM [Appointments] AS [a]
+INNER JOIN [Patients] AS [p] ON [a].[PatientID] = [p].[PatientID]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:05:48.380 +00:00 [INF] Raw appointmentDetails: []
+2023-11-17 00:05:48.399 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:05:48.407 +00:00 [INF] Formatted details: []
+2023-11-17 00:05:48.415 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:05:48.416 +00:00 [INF] Executed action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 174.329ms.
+2023-11-17 00:05:48.424 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:05:48.429 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 196.2604ms.
+2023-11-17 00:05:48.431 +00:00 [INF] Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[<>f__AnonymousType16`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType17`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:05:48.433 +00:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType11`4[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType12`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:05:48.510 +00:00 [INF] Executed action Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) in 312.395ms
+2023-11-17 00:05:48.514 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:05:48.517 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - - - 200 - application/json;+charset=utf-8 372.6226ms
+2023-11-17 00:05:48.527 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) in 364.077ms
+2023-11-17 00:05:48.531 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:05:48.535 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - - - 200 - application/json;+charset=utf-8 390.8124ms
+2023-11-17 00:05:51.032 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patient/AddPatient - -
+2023-11-17 00:05:51.035 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patient/AddPatient - - - 404 0 - 3.5741ms
+2023-11-17 00:05:58.412 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patients/AddPatient - -
+2023-11-17 00:05:58.417 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patients/AddPatient - - - 404 0 - 6.5330ms
+2023-11-17 00:07:29.766 +00:00 [INF] User profile is available. Using 'C:\Users\Bhoyee-pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-17 00:07:30.799 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:31.593 +00:00 [INF] Executed DbCommand (66ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:07:31.693 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:07:31.748 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:31.765 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-11-17 00:07:32.012 +00:00 [INF] Now listening on: https://localhost:7191
+2023-11-17 00:07:32.014 +00:00 [INF] Now listening on: http://localhost:5204
+2023-11-17 00:07:32.023 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 00:07:32.027 +00:00 [INF] Hosting environment: Development
+2023-11-17 00:07:32.030 +00:00 [INF] Content root path: C:\Users\Bhoyee-pc\Downloads\_Projects\_c#\_asp.net-core\Outpatient-App\Outpatient-App\
+2023-11-17 00:07:32.357 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/ - -
+2023-11-17 00:07:32.485 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:07:32.501 +00:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Outpatient_App.Controllers.HomeController (Outpatient-App).
+2023-11-17 00:07:32.557 +00:00 [INF] Executing action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:07:32.565 +00:00 [INF] Executed action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7022ms.
+2023-11-17 00:07:32.577 +00:00 [INF] Executing ViewResult, running view Index.
+2023-11-17 00:07:32.717 +00:00 [INF] Executed ViewResult - view Index executed in 139.7066ms.
+2023-11-17 00:07:32.725 +00:00 [INF] Executed action Outpatient_App.Controllers.HomeController.Index (Outpatient-App) in 219.6497ms
+2023-11-17 00:07:32.728 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:07:32.782 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/ - - - 200 - text/html;+charset=utf-8 431.2836ms
+2023-11-17 00:07:32.803 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - -
+2023-11-17 00:07:32.803 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:07:32.803 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:07:32.808 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - - - 404 0 - 4.7213ms
+2023-11-17 00:07:32.810 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 6.8543ms
+2023-11-17 00:07:32.825 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.4347ms
+2023-11-17 00:07:39.608 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Identity/Account/Login - -
+2023-11-17 00:07:39.663 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:07:39.756 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:07:39.819 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2023-11-17 00:07:39.843 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2023-11-17 00:07:39.852 +00:00 [INF] Executed handler method OnGetAsync, returned result .
+2023-11-17 00:07:39.874 +00:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2023-11-17 00:07:39.877 +00:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2023-11-17 00:07:40.309 +00:00 [INF] Executed page /Account/Login in 548.6947ms
+2023-11-17 00:07:40.312 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:07:40.327 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 720.2244ms
+2023-11-17 00:07:40.392 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:07:40.394 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:07:40.397 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 5.7237ms
+2023-11-17 00:07:40.454 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.1700ms
+2023-11-17 00:07:41.493 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305
+2023-11-17 00:07:41.507 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:07:41.511 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:07:41.577 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2023-11-17 00:07:41.630 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:41.657 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 00:07:42.031 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-11-17 00:07:42.184 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 00:07:42.215 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-11-17 00:07:42.232 +00:00 [INF] User logged in.
+2023-11-17 00:07:42.244 +00:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2023-11-17 00:07:42.260 +00:00 [INF] Executing LocalRedirectResult, redirecting to /Account/Dashboard.
+2023-11-17 00:07:42.264 +00:00 [INF] Executed page /Account/Login in 749.1955ms
+2023-11-17 00:07:42.267 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:07:42.275 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/Dashboard - -
+2023-11-17 00:07:42.278 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305 - 302 0 - 784.8812ms
+2023-11-17 00:07:42.280 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:07:42.292 +00:00 [INF] Route matched with {action = "Dashboard", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DashboardAsync() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:07:42.338 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:07:42.354 +00:00 [INF] Dashboard action started.
+2023-11-17 00:07:42.364 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:42.437 +00:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppointmentID], [a].[CheckedIn], [a].[PatientID], [a].[ScheduledTime]
+FROM [Appointments] AS [a]
+2023-11-17 00:07:42.509 +00:00 [INF] data
+2023-11-17 00:07:42.524 +00:00 [INF] Updating appointments...
+2023-11-17 00:07:42.636 +00:00 [INF] Executed DbCommand (11ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:07:42.669 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:07:42.699 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:07:42.868 +00:00 [INF] Executed DbCommand (12ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:07:42.882 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:07:42.886 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:07:42.893 +00:00 [INF] Dashboard action completed successfully.
+2023-11-17 00:07:42.899 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 555.9063ms.
+2023-11-17 00:07:42.915 +00:00 [INF] Executing ViewResult, running view Dashboard.
+2023-11-17 00:07:42.977 +00:00 [INF] Executed ViewResult - view Dashboard executed in 63.0352ms.
+2023-11-17 00:07:42.980 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) in 682.5621ms
+2023-11-17 00:07:42.983 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:07:42.997 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/Dashboard - - - 200 - text/html;+charset=utf-8 722.0664ms
+2023-11-17 00:07:43.045 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:07:43.047 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:07:43.049 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.9664ms
+2023-11-17 00:07:43.087 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 40.2406ms
+2023-11-17 00:07:43.116 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - -
+2023-11-17 00:07:43.116 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - -
+2023-11-17 00:07:43.120 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:07:43.124 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:07:43.131 +00:00 [INF] Route matched with {action = "AppointmentsTodayDetails", controller = "Appointment", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AppointmentsTodayDetails() on controller Outpatient_App.Controllers.AppointmentController (Outpatient-App).
+2023-11-17 00:07:43.133 +00:00 [INF] Route matched with {action = "UpdateAppointments", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAppointments() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:07:43.172 +00:00 [INF] Executing action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:07:43.206 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:07:43.215 +00:00 [INF] Updating appointments...
+2023-11-17 00:07:43.222 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:43.229 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:07:43.248 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:07:43.265 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:07:43.298 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:07:43.317 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[FirstName], [p].[Surname], [p].[DateOfBirth], [p].[Postcode], [a].[CheckedIn]
+FROM [Appointments] AS [a]
+INNER JOIN [Patients] AS [p] ON [a].[PatientID] = [p].[PatientID]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:07:43.323 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:07:43.334 +00:00 [INF] Raw appointmentDetails: []
+2023-11-17 00:07:43.342 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:07:43.354 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:07:43.361 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 151.031ms.
+2023-11-17 00:07:43.363 +00:00 [INF] Formatted details: []
+2023-11-17 00:07:43.367 +00:00 [INF] Executed action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 160.0507ms.
+2023-11-17 00:07:43.368 +00:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType11`4[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType12`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:07:43.370 +00:00 [INF] Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[<>f__AnonymousType16`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType17`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:07:43.442 +00:00 [INF] Executed action Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) in 306.3154ms
+2023-11-17 00:07:43.445 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:07:43.448 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - - - 200 - application/json;+charset=utf-8 331.8064ms
+2023-11-17 00:07:43.455 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) in 280.7752ms
+2023-11-17 00:07:43.458 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:07:43.461 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - - - 200 - application/json;+charset=utf-8 345.0927ms
+2023-11-17 00:07:46.037 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patient/AddPatient - -
+2023-11-17 00:07:46.042 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patient/AddPatient - - - 404 0 - 5.6822ms
+2023-11-17 00:07:55.003 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patient/Create - -
+2023-11-17 00:07:55.009 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:07:55.015 +00:00 [INF] Route matched with {action = "Create", controller = "Patient", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Outpatient_App.Controllers.PatientController (Outpatient-App).
+2023-11-17 00:07:55.061 +00:00 [INF] Executing action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:07:55.066 +00:00 [INF] Executed action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3199ms.
+2023-11-17 00:07:55.072 +00:00 [INF] Executing ViewResult, running view Create.
+2023-11-17 00:07:55.387 +00:00 [INF] Executed ViewResult - view Create executed in 316.3344ms.
+2023-11-17 00:07:55.390 +00:00 [INF] Executed action Outpatient_App.Controllers.PatientController.Create (Outpatient-App) in 370.3462ms
+2023-11-17 00:07:55.393 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:07:55.404 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patient/Create - - - 200 - text/html;+charset=utf-8 400.7248ms
+2023-11-17 00:07:55.454 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:07:55.455 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:07:55.458 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.5796ms
+2023-11-17 00:07:55.475 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.3668ms
+2023-11-17 00:08:07.872 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/Dashboard - -
+2023-11-17 00:08:07.876 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:08:07.878 +00:00 [INF] Route matched with {action = "Dashboard", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DashboardAsync() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:08:07.916 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:08:07.927 +00:00 [INF] Dashboard action started.
+2023-11-17 00:08:07.936 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:08:07.949 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppointmentID], [a].[CheckedIn], [a].[PatientID], [a].[ScheduledTime]
+FROM [Appointments] AS [a]
+2023-11-17 00:08:07.963 +00:00 [INF] data
+2023-11-17 00:08:07.971 +00:00 [INF] Updating appointments...
+2023-11-17 00:08:07.988 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:08:08.007 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:08:08.024 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:08:08.048 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:08:08.066 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:08:08.077 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:08:08.087 +00:00 [INF] Dashboard action completed successfully.
+2023-11-17 00:08:08.092 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 171.1339ms.
+2023-11-17 00:08:08.099 +00:00 [INF] Executing ViewResult, running view Dashboard.
+2023-11-17 00:08:08.140 +00:00 [INF] Executed ViewResult - view Dashboard executed in 42.0013ms.
+2023-11-17 00:08:08.144 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) in 263.5237ms
+2023-11-17 00:08:08.147 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:08:08.168 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/Dashboard - - - 200 - text/html;+charset=utf-8 296.1616ms
+2023-11-17 00:08:08.196 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:08:08.203 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:08:08.207 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.9330ms
+2023-11-17 00:08:08.213 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 16.1961ms
+2023-11-17 00:08:08.228 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - -
+2023-11-17 00:08:08.228 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - -
+2023-11-17 00:08:08.233 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:08:08.233 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:08:08.236 +00:00 [INF] Route matched with {action = "UpdateAppointments", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAppointments() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:08:08.238 +00:00 [INF] Route matched with {action = "AppointmentsTodayDetails", controller = "Appointment", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AppointmentsTodayDetails() on controller Outpatient_App.Controllers.AppointmentController (Outpatient-App).
+2023-11-17 00:08:08.287 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:08:08.327 +00:00 [INF] Executing action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:08:08.335 +00:00 [INF] Updating appointments...
+2023-11-17 00:08:08.343 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:08:08.350 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:08:08.369 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[FirstName], [p].[Surname], [p].[DateOfBirth], [p].[Postcode], [a].[CheckedIn]
+FROM [Appointments] AS [a]
+INNER JOIN [Patients] AS [p] ON [a].[PatientID] = [p].[PatientID]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:08:08.380 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:08:08.389 +00:00 [INF] Raw appointmentDetails: []
+2023-11-17 00:08:08.400 +00:00 [INF] Formatted details: []
+2023-11-17 00:08:08.406 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:08:08.408 +00:00 [INF] Executed action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 70.9895ms.
+2023-11-17 00:08:08.421 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:08:08.423 +00:00 [INF] Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[<>f__AnonymousType16`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType17`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:08:08.437 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:08:08.438 +00:00 [INF] Executed action Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) in 148.5109ms
+2023-11-17 00:08:08.449 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:08:08.452 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:08:08.462 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:08:08.465 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - - - 200 - application/json;+charset=utf-8 237.6936ms
+2023-11-17 00:08:08.470 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 140.4611ms.
+2023-11-17 00:08:08.486 +00:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType11`4[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType12`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:08:08.492 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) in 248.4547ms
+2023-11-17 00:08:08.499 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:08:08.504 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - - - 200 - application/json;+charset=utf-8 276.3692ms
+2023-11-17 00:09:48.926 +00:00 [INF] User profile is available. Using 'C:\Users\Bhoyee-pc\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-11-17 00:09:49.974 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:09:50.753 +00:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:09:50.862 +00:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2023-11-17 00:09:50.909 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:09:50.923 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2023-11-17 00:09:51.104 +00:00 [INF] Now listening on: https://localhost:7191
+2023-11-17 00:09:51.106 +00:00 [INF] Now listening on: http://localhost:5204
+2023-11-17 00:09:51.115 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-17 00:09:51.118 +00:00 [INF] Hosting environment: Development
+2023-11-17 00:09:51.121 +00:00 [INF] Content root path: C:\Users\Bhoyee-pc\Downloads\_Projects\_c#\_asp.net-core\Outpatient-App\Outpatient-App\
+2023-11-17 00:09:51.472 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/ - -
+2023-11-17 00:09:51.594 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:09:51.609 +00:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Outpatient_App.Controllers.HomeController (Outpatient-App).
+2023-11-17 00:09:51.663 +00:00 [INF] Executing action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:09:51.674 +00:00 [INF] Executed action method Outpatient_App.Controllers.HomeController.Index (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8106ms.
+2023-11-17 00:09:51.686 +00:00 [INF] Executing ViewResult, running view Index.
+2023-11-17 00:09:51.827 +00:00 [INF] Executed ViewResult - view Index executed in 141.1777ms.
+2023-11-17 00:09:51.834 +00:00 [INF] Executed action Outpatient_App.Controllers.HomeController.Index (Outpatient-App) in 221.5503ms
+2023-11-17 00:09:51.837 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.HomeController.Index (Outpatient-App)'
+2023-11-17 00:09:51.875 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/ - - - 200 - text/html;+charset=utf-8 406.8395ms
+2023-11-17 00:09:51.895 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - -
+2023-11-17 00:09:51.895 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:09:51.895 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:09:51.901 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Outpatient_App.styles.css - - - 404 0 - 5.8038ms
+2023-11-17 00:09:51.910 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 14.8525ms
+2023-11-17 00:09:51.920 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.5202ms
+2023-11-17 00:10:05.895 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Identity/Account/Login - -
+2023-11-17 00:10:05.941 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:10:06.015 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:10:06.097 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2023-11-17 00:10:06.126 +00:00 [INF] AuthenticationScheme: Identity.External signed out.
+2023-11-17 00:10:06.134 +00:00 [INF] Executed handler method OnGetAsync, returned result .
+2023-11-17 00:10:06.156 +00:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2023-11-17 00:10:06.159 +00:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2023-11-17 00:10:06.500 +00:00 [INF] Executed page /Account/Login in 481.3473ms
+2023-11-17 00:10:06.503 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:10:06.512 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Identity/Account/Login - - - 200 - text/html;+charset=utf-8 616.6761ms
+2023-11-17 00:10:06.553 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:10:06.555 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:10:06.556 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.6831ms
+2023-11-17 00:10:06.610 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.1107ms
+2023-11-17 00:10:07.715 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305
+2023-11-17 00:10:07.728 +00:00 [INF] Executing endpoint '/Account/Login'
+2023-11-17 00:10:07.735 +00:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2023-11-17 00:10:07.810 +00:00 [INF] Executing handler method Outpatient_App.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2023-11-17 00:10:07.867 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:10:07.892 +00:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2023-11-17 00:10:08.274 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2023-11-17 00:10:08.411 +00:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2023-11-17 00:10:08.441 +00:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2023-11-17 00:10:08.457 +00:00 [INF] User logged in.
+2023-11-17 00:10:08.467 +00:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2023-11-17 00:10:08.482 +00:00 [INF] Executing LocalRedirectResult, redirecting to /Account/Dashboard.
+2023-11-17 00:10:08.486 +00:00 [INF] Executed page /Account/Login in 747.462ms
+2023-11-17 00:10:08.490 +00:00 [INF] Executed endpoint '/Account/Login'
+2023-11-17 00:10:08.499 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/Dashboard - -
+2023-11-17 00:10:08.500 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Identity/Account/Login application/x-www-form-urlencoded 305 - 302 0 - 785.0697ms
+2023-11-17 00:10:08.504 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:10:08.515 +00:00 [INF] Route matched with {action = "Dashboard", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DashboardAsync() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:10:08.565 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:10:08.583 +00:00 [INF] Dashboard action started.
+2023-11-17 00:10:08.594 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:10:08.672 +00:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AppointmentID], [a].[CheckedIn], [a].[PatientID], [a].[ScheduledTime]
+FROM [Appointments] AS [a]
+2023-11-17 00:10:08.743 +00:00 [INF] data
+2023-11-17 00:10:08.772 +00:00 [INF] Updating appointments...
+2023-11-17 00:10:08.887 +00:00 [INF] Executed DbCommand (11ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:10:08.950 +00:00 [INF] Executed DbCommand (2ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:10:08.975 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:10:09.156 +00:00 [INF] Executed DbCommand (6ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:10:09.170 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:10:09.177 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:10:09.184 +00:00 [INF] Dashboard action completed successfully.
+2023-11-17 00:10:09.192 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 621.2919ms.
+2023-11-17 00:10:09.209 +00:00 [INF] Executing ViewResult, running view Dashboard.
+2023-11-17 00:10:09.290 +00:00 [INF] Executed ViewResult - view Dashboard executed in 83.2095ms.
+2023-11-17 00:10:09.294 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App) in 774.278ms
+2023-11-17 00:10:09.297 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.DashboardAsync (Outpatient-App)'
+2023-11-17 00:10:09.311 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/Dashboard - - - 200 - text/html;+charset=utf-8 812.4972ms
+2023-11-17 00:10:09.344 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:10:09.345 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:10:09.348 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.6320ms
+2023-11-17 00:10:09.382 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 36.5498ms
+2023-11-17 00:10:09.413 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - -
+2023-11-17 00:10:09.413 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - -
+2023-11-17 00:10:09.418 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:10:09.419 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:10:09.427 +00:00 [INF] Route matched with {action = "UpdateAppointments", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAppointments() on controller Outpatient_App.Controllers.AccountController (Outpatient-App).
+2023-11-17 00:10:09.429 +00:00 [INF] Route matched with {action = "AppointmentsTodayDetails", controller = "Appointment", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AppointmentsTodayDetails() on controller Outpatient_App.Controllers.AppointmentController (Outpatient-App).
+2023-11-17 00:10:09.470 +00:00 [INF] Executing action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:10:09.508 +00:00 [INF] Executing action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:10:09.516 +00:00 [INF] Updating appointments...
+2023-11-17 00:10:09.527 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:10:09.533 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:10:09.544 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:10:09.559 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__AddDays_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__AddDays_1) = 0
+2023-11-17 00:10:09.575 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Appointments] AS [a]
+WHERE [a].[CheckedIn] = CAST(1 AS bit)
+2023-11-17 00:10:09.618 +00:00 [INF] Executed DbCommand (7ms) [Parameters=[@__today_Month_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CONVERT(date, [a].[ScheduledTime]) AS [Date], COUNT(*) AS [Count]
+FROM [Appointments] AS [a]
+WHERE DATEPART(month, [a].[ScheduledTime]) = @__today_Month_0
+GROUP BY CONVERT(date, [a].[ScheduledTime])
+ORDER BY CONVERT(date, [a].[ScheduledTime])
+2023-11-17 00:10:09.634 +00:00 [INF] Executed DbCommand (8ms) [Parameters=[@__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[FirstName], [p].[Surname], [p].[DateOfBirth], [p].[Postcode], [a].[CheckedIn]
+FROM [Appointments] AS [a]
+INNER JOIN [Patients] AS [p] ON [a].[PatientID] = [p].[PatientID]
+WHERE DATEDIFF(day, CONVERT(date, [a].[ScheduledTime]), @__today_1) = 0
+2023-11-17 00:10:09.644 +00:00 [INF] Total appointments for today: 0
+2023-11-17 00:10:09.660 +00:00 [INF] Appointments updated successfully.
+2023-11-17 00:10:09.661 +00:00 [INF] Raw appointmentDetails: []
+2023-11-17 00:10:09.663 +00:00 [INF] Executed action method Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 153.604ms.
+2023-11-17 00:10:09.679 +00:00 [INF] Formatted details: []
+2023-11-17 00:10:09.680 +00:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType11`4[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType12`2[[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:10:09.682 +00:00 [INF] Executed action method Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.JsonResult in 164.0287ms.
+2023-11-17 00:10:09.689 +00:00 [INF] Executing JsonResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[<>f__AnonymousType16`5[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[<>f__AnonymousType17`4[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Outpatient-App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-17 00:10:09.761 +00:00 [INF] Executed action Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App) in 288.8411ms
+2023-11-17 00:10:09.765 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AppointmentController.AppointmentsTodayDetails (Outpatient-App)'
+2023-11-17 00:10:09.767 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Appointment/AppointmentsTodayDetails - - - 200 - application/json;+charset=utf-8 354.3179ms
+2023-11-17 00:10:09.774 +00:00 [INF] Executed action Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App) in 341.9278ms
+2023-11-17 00:10:09.777 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.AccountController.UpdateAppointments (Outpatient-App)'
+2023-11-17 00:10:09.780 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Account/UpdateAppointments - - - 200 - application/json;+charset=utf-8 366.7324ms
+2023-11-17 00:10:11.820 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/Patient/Create - -
+2023-11-17 00:10:11.825 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:10:11.831 +00:00 [INF] Route matched with {action = "Create", controller = "Patient", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Outpatient_App.Controllers.PatientController (Outpatient-App).
+2023-11-17 00:10:11.864 +00:00 [INF] Executing action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:10:11.869 +00:00 [INF] Executed action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1878ms.
+2023-11-17 00:10:11.874 +00:00 [INF] Executing ViewResult, running view Create.
+2023-11-17 00:10:12.134 +00:00 [INF] Executed ViewResult - view Create executed in 261.4368ms.
+2023-11-17 00:10:12.138 +00:00 [INF] Executed action Outpatient_App.Controllers.PatientController.Create (Outpatient-App) in 302.275ms
+2023-11-17 00:10:12.141 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:10:12.157 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/Patient/Create - - - 200 - text/html;+charset=utf-8 337.8485ms
+2023-11-17 00:10:12.184 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:10:12.185 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:10:12.187 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 2.8101ms
+2023-11-17 00:10:12.204 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 19.6363ms
+2023-11-17 00:11:09.185 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Patient/Create application/x-www-form-urlencoded 318
+2023-11-17 00:11:09.207 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:11:09.220 +00:00 [INF] Route matched with {action = "Create", controller = "Patient", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(Outpatient_App.Models.Patient) on controller Outpatient_App.Controllers.PatientController (Outpatient-App).
+2023-11-17 00:11:09.312 +00:00 [INF] Executing action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:11:09.326 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:11:09.392 +00:00 [INF] Executed DbCommand (42ms) [Parameters=[@__patient_HealthCardID_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PatientID], [p].[DateOfBirth], [p].[FirstName], [p].[HealthCardID], [p].[Postcode], [p].[Surname]
+FROM [Patients] AS [p]
+WHERE [p].[HealthCardID] = @__patient_HealthCardID_0
+2023-11-17 00:11:09.844 +00:00 [INF] Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([DateOfBirth], [FirstName], [HealthCardID], [Postcode], [Surname])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [PatientID]
+FROM [Patients]
+WHERE @@ROWCOUNT = 1 AND [PatientID] = scope_identity();
+2023-11-17 00:11:09.984 +00:00 [INF] New patient added: 7
+2023-11-17 00:11:09.987 +00:00 [INF] Executed action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 668.8474ms.
+2023-11-17 00:11:09.991 +00:00 [INF] Executing ViewResult, running view Create.
+2023-11-17 00:11:10.026 +00:00 [INF] Executed ViewResult - view Create executed in 35.002ms.
+2023-11-17 00:11:10.030 +00:00 [INF] Executed action Outpatient_App.Controllers.PatientController.Create (Outpatient-App) in 804.1386ms
+2023-11-17 00:11:10.034 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:11:10.047 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Patient/Create application/x-www-form-urlencoded 318 - 200 - text/html;+charset=utf-8 862.5244ms
+2023-11-17 00:11:10.086 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:11:10.087 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:11:10.090 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 3.4567ms
+2023-11-17 00:11:10.109 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 21.4940ms
+2023-11-17 00:11:38.752 +00:00 [INF] Request starting HTTP/2 POST https://localhost:7191/Patient/Create application/x-www-form-urlencoded 318
+2023-11-17 00:11:38.763 +00:00 [INF] Executing endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:11:38.765 +00:00 [INF] Route matched with {action = "Create", controller = "Patient", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(Outpatient_App.Models.Patient) on controller Outpatient_App.Controllers.PatientController (Outpatient-App).
+2023-11-17 00:11:38.783 +00:00 [INF] Executing action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App) - Validation state: "Valid"
+2023-11-17 00:11:38.791 +00:00 [INF] Entity Framework Core 6.0.23 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-17 00:11:38.804 +00:00 [INF] Executed DbCommand (3ms) [Parameters=[@__patient_HealthCardID_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[PatientID], [p].[DateOfBirth], [p].[FirstName], [p].[HealthCardID], [p].[Postcode], [p].[Surname]
+FROM [Patients] AS [p]
+WHERE [p].[HealthCardID] = @__patient_HealthCardID_0
+2023-11-17 00:11:38.819 +00:00 [INF] Executed action method Outpatient_App.Controllers.PatientController.Create (Outpatient-App), returned result Microsoft.AspNetCore.Mvc.ViewResult in 32.5605ms.
+2023-11-17 00:11:38.825 +00:00 [INF] Executing ViewResult, running view Create.
+2023-11-17 00:11:38.879 +00:00 [INF] Executed ViewResult - view Create executed in 54.7726ms.
+2023-11-17 00:11:38.883 +00:00 [INF] Executed action Outpatient_App.Controllers.PatientController.Create (Outpatient-App) in 113.6971ms
+2023-11-17 00:11:38.885 +00:00 [INF] Executed endpoint 'Outpatient_App.Controllers.PatientController.Create (Outpatient-App)'
+2023-11-17 00:11:38.892 +00:00 [INF] Request finished HTTP/2 POST https://localhost:7191/Patient/Create application/x-www-form-urlencoded 318 - 200 - text/html;+charset=utf-8 140.6853ms
+2023-11-17 00:11:38.924 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - -
+2023-11-17 00:11:38.927 +00:00 [INF] Request starting HTTP/2 GET https://localhost:7191/_vs/browserLink - -
+2023-11-17 00:11:38.934 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_framework/aspnetcore-browser-refresh.js - - - 200 11998 application/javascript;+charset=utf-8 10.0847ms
+2023-11-17 00:11:38.958 +00:00 [INF] Request finished HTTP/2 GET https://localhost:7191/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.5445ms

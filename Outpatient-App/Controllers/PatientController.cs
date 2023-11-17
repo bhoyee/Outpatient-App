@@ -7,12 +7,12 @@ using System.Linq;
 
 namespace Outpatient_App.Controllers
 {
-    public class PatientsController : Controller
+    public class PatientController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly ILogger<PatientsController> _logger; // Logger instance
+        private readonly ILogger<PatientController> _logger; // Logger instance
 
-        public PatientsController(ApplicationDbContext context, ILogger<PatientsController> logger)
+        public PatientController(ApplicationDbContext context, ILogger<PatientController> logger)
         {
             _context = context;
             _logger = logger;
