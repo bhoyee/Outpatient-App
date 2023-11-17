@@ -6,5 +6,7 @@
         public int PatientID { get; set; }
         public DateTime ScheduledTime { get; set; }
         public bool CheckedIn { get; set; }
+
+        public Patient Patient { get; set; }
     }
 }

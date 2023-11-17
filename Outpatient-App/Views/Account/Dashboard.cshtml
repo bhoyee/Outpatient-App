@@ -203,7 +203,8 @@
                     if (data) {
                         document.getElementById("totalAppointmentsForToday").innerText = data.totalAppointmentsForToday;
                         document.getElementById("totalAppointmentsForNextDay").innerText = data.totalAppointmentsForNextDay;
-                        document.getElementById("totalCheckedInAppointments").innerText = data.totalCheckedInAppointments;
+                        document.getElementById("totalCheckedInAppointments").innerText = data.totalCheckedInAppointmentsForToday;
+
                     } else {
                         console.error("Invalid data format received from the server.");
                     }
@@ -212,6 +213,7 @@
                     console.error("Error updating appointments:", error);
                 });
         }
+
 
 
 

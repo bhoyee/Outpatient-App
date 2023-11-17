@@ -150,8 +150,9 @@ namespace Outpatient_App.Controllers
                 int totalAppointmentsForNextDay = await _context.Appointments
                     .CountAsync(appointment => EF.Functions.DateDiffDay(appointment.ScheduledTime.Date, today.AddDays(1)) == 0);
 
-                int totalCheckedInAppointments = await _context.Appointments
-                 .CountAsync(appointment => appointment.CheckedIn == true);
+                int totalCheckedInAppointmentsForToday = await _context.Appointments
+                    .CountAsync(appointment =>
+                        appointment.CheckedIn == true && EF.Functions.DateDiffDay(appointment.ScheduledTime.Date, today) == 0);
 
                 // Get monthly data
                 var monthlyData = await _context.Appointments
@@ -180,7 +181,7 @@ namespace Outpatient_App.Controllers
                 {
                     totalAppointmentsForToday,
                     totalAppointmentsForNextDay,
-                    totalCheckedInAppointments,
+                    totalCheckedInAppointmentsForToday,
                     monthlyData = new
                     {
                         labels = monthlyLabels,
