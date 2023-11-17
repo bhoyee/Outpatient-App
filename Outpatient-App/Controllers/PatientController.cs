@@ -42,9 +42,9 @@ namespace Outpatient_App.Controllers
                     _context.SaveChanges();
 
                     _logger.LogInformation("New patient added: {PatientId}", patient.PatientID); // Log successful addition
+                    ViewBag.Success = "Patient added successfully";
                     return View(patient);
 
-                    return RedirectToAction("Success");
                 }
                 catch (Exception ex)
                 {
